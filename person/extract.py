@@ -45,4 +45,3 @@ def extract_persons(text):
     result = list(sorted(result))
 
     return result
-
