@@ -59,4 +59,3 @@ def extract_countries(text):
     result = sorted(result)
 
     return result
-
