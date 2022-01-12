@@ -8,6 +8,7 @@ def normalize_surname(surname):
     ---------------------------------------------
         function only partially removes things
             'თან', 'თვის' ... from the end...
+        and if just the word "თვის", "თან" was passed, returns empty string - ""
     ---------------------------------------------
 
     ex:
@@ -17,6 +18,11 @@ def normalize_surname(surname):
 
     helper link - http://www.nplg.gov.ge/civil/statiebi/wignebi/qartul_enis_marTlwera/qartul_enis_marTlwera-tavi-3.htm
     """
+
+    # case when for example "თვის" was passed - it most probably is not name or its part,
+    # so returning empty string should not be the issue
+    if surname in {"თან", "სთან", "თვის", "ზე", "სა"}:
+        return ""
 
     #################################
     # basic preprocessing
@@ -181,6 +187,13 @@ if __name__ == "__main__":
         "საბოსთვის": "საბო",
         "საბოზე": "საბო",  # :-(
         "საბოსა": "საბო",
+        #########################
+        # test exceptions
+        "თან": "",
+        "სთან": "",
+        "თვის": "",
+        "ზე": "",
+        "სა": "",
         #########################
     }
 
