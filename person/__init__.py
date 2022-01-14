@@ -1,5 +1,13 @@
 # currently supporting georgian people name & surnames, we may add non Georgians later
 
+# rules for names
+"""
+Name must have no spaces and only contain only Georgian letters,
+if we want to extract names with possible dash or space in it, add 
+both names that are joined by space/dash as a separate names here,
+ex, to match "ერიხ-მარია" as a name, NAMES must contain
+two separate names, one for "ერიხ" and another for "მარია" 
+"""
 
 NAMES = {
     "პასკუალე",
@@ -1564,6 +1572,7 @@ NAMES = {
     "კარსონ",
     "მარგა",
     "გიორგი",
+    "გირჩი",
     "რუმერ",
     "თეკო",
     "ლუდმილა",
@@ -2293,6 +2302,7 @@ NAMES = {
     "ქელი",
     "კუინ",
     "ზურაბ",
+    "ზურაბ გირჩი",
     "მანიკ",
     "ტაი",
     "ჰამიშ",
@@ -2942,6 +2952,7 @@ NAMES = {
     "ბიიანკა",
     "სულე",
     "სანდრა",
+    "სანდრა ელისაბედ",
     "ვუდი",
     "აისელ",
     "როჯერიო",
@@ -4468,6 +4479,7 @@ NAMES = {
     "ემილიანო",
     "ნიკანდრო",
     "კიმ",
+    "კიმ ჩენ",
     "მენა",
     "არმანდ",
     "აკინენი",
@@ -4735,7 +4747,6 @@ NAMES = {
     "მუჰამედ",
     "ლალი",
     "იუან",
-    "დავი",
     "ნავია",
     "მერიან",
     "შარმან",
@@ -8501,7 +8512,7 @@ NAMES = {
     "გაიოზი",
     "ვალერიანი",
     "მიცუკო",
-    "ანა-მარია",
+    "ანა მარია",
     "ვინიტ",
     "დარსი",
     "თუთანა",
@@ -19125,7 +19136,6 @@ SURNAMES = {
     "კრაკოვსკი",
     "უაიზი",
     "ფარესი",
-    "დავი",
     "როსოვიჩი",
     "არჩემაშვილი",
     "გვინი",
@@ -29583,6 +29593,7 @@ SURNAMES = {
     "სტილზი",
     "ტიმიმი",
     "კაპანელი",
+    "კაპანაძე",
     "პედე",
     "ერმოლინსკი",
     "ფლიონაშვილი",
@@ -29596,6 +29607,7 @@ SURNAMES = {
     "არდაზიანი",
     "ღვამიჩავა",
     "ინგვალი",
+    "ინი",
     "აპატოუ",
     "კარელიძე",
     "ალექსანდრი",
@@ -35492,3 +35504,17 @@ SURNAMES = {
     "ელჩუევი",
     "შმალცელი",
 }
+
+# make some checks and add helpers
+_names = {i for i in NAMES}
+
+for name in _names:
+    spaces_num = name.count(" ")
+
+    # only 1 space-having names supported
+    if spaces_num == 1:
+        NAMES.remove(name)
+        continue
+
+    if "-" in name:
+        NAMES.remove(name)
