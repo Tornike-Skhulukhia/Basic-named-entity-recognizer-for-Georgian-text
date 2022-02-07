@@ -30,11 +30,6 @@ def extract_persons(text):
     must not have any spaces.
     """
 
-    # yes = False
-    # if text == "გიორგი (დავით) გვარამია იყო და არა იყო რა":
-    #     yes = True
-    #     # breakpoint()
-
     text = _normalize_text(text)
 
     splitted_words = text.split()
