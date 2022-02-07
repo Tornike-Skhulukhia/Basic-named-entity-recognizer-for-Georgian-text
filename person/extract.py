@@ -24,10 +24,8 @@ def extract_persons(text):
     identified sorted in ascending order.
 
     Only currently listed name & surname combinations will be matched and
-    only in case when we have name first directly followed with surname.
+    only in case when we have name first(we may have first and middle name) directly followed with surname.
 
-    To identify correctly, name can have at most one space, surname
-    must not have any spaces.
     """
 
     text = _normalize_text(text)
