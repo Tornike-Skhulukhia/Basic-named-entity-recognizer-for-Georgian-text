@@ -1188,4 +1188,3 @@ for i in COUNTRIES_EXTRACT_INFO:
     i["_word_should_start_spaces_nums"] = [
         j.count(" ") for j in i.get("word_should_start", [])
     ]
-

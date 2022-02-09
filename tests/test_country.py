@@ -1,4 +1,4 @@
-from . import extract_countries
+from country.extract import extract_countries
 
 
 def test_1():
@@ -99,4 +99,3 @@ def test_7():
 
     answer = ["AF", "GE", "NO", "SE"]
     assert sorted(answer) == extract_countries(text)
-

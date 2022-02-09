@@ -17,7 +17,8 @@ c = get_countries(
 )
 
 print(c)
-# ['BR', 'CN', 'DE', 'FR', 'GB', 'GE', 'RU', 'US']
+# result
+['BR', 'CN', 'DE', 'FR', 'GB', 'GE', 'RU', 'US']
 
 ```
 
@@ -33,8 +34,26 @@ p = get_persons(
 )
 
 print(p)
-# ['დიმიტრი შაშკინი', 'ნიკა გვარამია']
+# result
+['დიმიტრი შაშკინი', 'ნიკა გვარამია']
 
 ```
 
 
+# helper functions to get meta information where possible
+```python
+from nerge import get_country_meta
+
+iso_alpha_2_code = "US"
+m = get_country_meta(iso_alpha_2_code)
+
+print(m)
+# result
+{
+    'english_short_name': 'United States of America (the)',
+    'friendly_name': 'United States of America',
+    'alpha_3_code': 'USA',
+    'numeric_code': 840,
+    'flag': '🇺🇸'
+}
+```
