@@ -1,4 +1,4 @@
-from . import extract_persons
+from person.extract import extract_persons
 
 
 def test_1():
@@ -354,4 +354,3 @@ def test_16():
     answer = ["გიორგი დავით გვარამია"]
 
     assert sorted(answer) == extract_persons(text)
-
