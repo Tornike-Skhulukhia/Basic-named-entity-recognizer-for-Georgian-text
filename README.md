@@ -1,9 +1,51 @@
 # Basic named entity recognizer for Georgian text
 Non ML-based approach to extract named entities from Georgian text using Python.
 Currently supported extractions are for countries and persons.
-For better idea how accurate these extractions are, please see files in tests directory.
+For better idea how accurate these extractions are, please see files in tests directory and do your own testing.
 
-# countries extraction example
+# Person extraction examples
+
+### get persons
+```python
+from nerge import get_persons
+
+p = get_persons(
+    'უკრაინის პრეზიდენტი ვლადიმირ ზელენსკი საქართველოს პრეზიდენტ სალომე ზურაბიშვილს'
+    ' მხარდაჭერისთვის მადლობას ქართულ ენაზე უხდის.'
+)
+
+print(p)
+# result
+['ვლადიმირ ზელენსკი', 'სალომე ზურაბიშვილი']
+```
+
+### get sex from name
+```python
+from nerge import get_sex
+
+name = "გიორგი"
+s = get_sex(name)
+
+print(s)
+# result
+"M"
+```
+
+### Basic(just letter-based) name/surname translation to English
+```python
+from nerge import translate_to_en
+
+t = translate_to_en('კობა გვენეტაძე')
+
+print(t)
+# result
+'Koba Gvenetadze'
+```
+
+
+# Country extraction examples
+
+### get countries
 ```python
 from nerge import get_countries
 
@@ -23,34 +65,8 @@ print(c)
 
 ```
 
-# persons extraction example
-```python
-from nerge import get_persons
 
-
-p = get_persons(
-    'უკრაინის პრეზიდენტი ვლადიმირ ზელენსკი საქართველოს პრეზიდენტ სალომე ზურაბიშვილს'
-    ' მხარდაჭერისთვის მადლობას ქართულ ენაზე უხდის.'
-)
-
-print(p)
-# result
-['ვლადიმირ ზელენსკი', 'სალომე ზურაბიშვილი']
-```
-
-# helper function to get sex from name if possible
-```python
-from nerge import get_sex
-
-name = "გიორგი"
-s = get_sex(name)
-
-print(s)
-# result
-# "M"
-```
-
-# helper functions to get meta information where possible
+### get meta information about country
 ```python
 from nerge import get_country_meta
 
