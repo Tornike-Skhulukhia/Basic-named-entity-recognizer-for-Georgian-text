@@ -38,6 +38,17 @@ print(p)
 ['ვლადიმირ ზელენსკი', 'სალომე ზურაბიშვილი']
 ```
 
+# helper function to get sex from name if possible
+```python
+from nerge import get_sex
+
+name = "გიორგი"
+s = get_sex(name)
+
+print(s)
+# result
+# "M"
+```
 
 # helper functions to get meta information where possible
 ```python
