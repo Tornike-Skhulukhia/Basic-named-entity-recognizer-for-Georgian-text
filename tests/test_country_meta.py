@@ -5,8 +5,9 @@ def test_georgia():
     resp = get_country_meta("GE")
 
     for key, value in {
-        "english_short_name": "Georgia",
-        "friendly_name": "Georgia",
+        "official_name": "Georgia",
+        "name_en": "Georgia",
+        "name_ge": "საქართველოს",
         "alpha_3_code": "GEO",
         "numeric_code": 268,
         "flag": "🇬🇪",
@@ -18,8 +19,9 @@ def test_russia():
     resp = get_country_meta("RU")
 
     for key, value in {
-        "english_short_name": "Russian Federation (the)",
-        "friendly_name": "Russia",
+        "official_name": "Russian Federation (the)",
+        "name_en": "Russia",
+        "name_ge": "რუსეთი",
         "alpha_3_code": "RUS",
         "numeric_code": 643,
         "flag": "🇷🇺",
@@ -31,8 +33,9 @@ def test_us():
     resp = get_country_meta("US")
 
     for key, value in {
-        "english_short_name": "United States of America (the)",
-        "friendly_name": "United States of America",
+        "official_name": "United States of America (the)",
+        "name_en": "United States of America",
+        "name_ge": "ამერიკის შეერთებული შტატები",
         "alpha_3_code": "USA",
         "numeric_code": 840,
         "flag": "🇺🇸",

@@ -26,6 +26,10 @@ def extract_persons(text):
     Only currently listed name & surname combinations will be matched and
     only in case when we have name first(we may have first and middle name) directly followed with surname.
 
+    Before starting matching, text goes through basic normalization to leave
+    only relevant letters for extraction, so if for example input text
+    contains something like "first_name (middle_name) last_name",
+    extracted result will be "first_name middle_name last_name".
     """
 
     text = _normalize_text(text)
