@@ -31,7 +31,7 @@ print(s)
 "M"
 ```
 
-### Basic(just letter-based) name/surname translation to English
+### basic(just letter-based) name/surname translation to English
 ```python
 from nerge import translate_to_en
 
