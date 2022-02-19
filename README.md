@@ -125,18 +125,24 @@ so errors like that may be an issue:
 
 #### 1) Not logical results:
 
-input:\
+input:
+```python
     '''
     "PCR ტესტი 70 ლარად?" ვკითხულობთ მარიამ მარიამიძისთვის მიწერილი შეტყობინებიდან  
     '''
-output:\
+```
+output:
+```python
     [{'person': 'მარიამ მარიამიძე', 'quote': 'PCR ტესტი 70 ლარად?', 'match_case': 1}]
+```
 
 Here the quote is not from this person, but according to our rules was identified so.
 
 #### 2) if there are quotes in quotes in text, result will not be full/correct:
 
-input:\
+input:
+```python
+
     """
    უკრაინის პრეზიდენტმა ვლადიმერ ზელენსკიმ მიუნხენის უსაფრთხოების კონფერენციაზე
    სიტყვით გამოსვლისას იმ ვითარებაზე ისაუბრა, რომელიც ქვეყნის შიგნით
@@ -146,7 +152,10 @@ input:\
    არავისზე თავდასხმას არ ვაპირებთ, თუმცა ყველაფრისთვის მზად ვართ."
    - ამბობს უკრაინის პრეზიდენტი
    """
-output:\
+```
+output:
+```python
+
 [
     {
     'person': 'ვლადიმერ ზელენსკი',
@@ -154,6 +163,7 @@ output:\
      'match_case': 2
    }
 ]
+```
 
 Here result is shorter than it should be.
 
