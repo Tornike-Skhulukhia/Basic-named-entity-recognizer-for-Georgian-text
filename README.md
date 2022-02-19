@@ -123,7 +123,7 @@ Developed on version 3.8, should work on 3.6+
 This function is just simple pattern matching solution,
 so errors like that may be an issue:\
 
-1) Not logical results:
+#### 1) Not logical results:
 
 input:\
     '''
@@ -134,7 +134,7 @@ output:\
 
 Here the quote is not from this person, but according to our rules was identified so.
 
-2) if there are quotes in quotes in text, result will not be full/correct:
+#### 2) if there are quotes in quotes in text, result will not be full/correct:
 
 input:\
     """
