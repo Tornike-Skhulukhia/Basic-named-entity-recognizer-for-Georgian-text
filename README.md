@@ -116,6 +116,8 @@ print(m)
 
 
 # supported python versions
+Developed on version 3.8, should work on 3.6+
+
 # limitations to be aware of
 ### get_quotes
 This function is just simple pattern matching solution,
