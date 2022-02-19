@@ -55,11 +55,18 @@ quotes = get_quotes(text)
 
 print(quotes)
 # result
-{
-    "person": "გიორგი გიორგაძე",
-    "quote": "ტესტი",
-    "match_case": 1
-}
+[
+    {
+        'person': 'გიორგი გიორგაძე',
+        'quote': 'ტესტი',
+        'match_case': 1
+    },
+    {
+        'person': 'მარიამ მარიამიძე',
+        'quote': 'PCR ტესტი 70 ლარად გვაქვს',
+        'match_case': 1
+    }
+]
 ```
 
 
