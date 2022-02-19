@@ -42,6 +42,28 @@ print(t)
 'Koba Gvenetadze'
 ```
 
+### get person quotes from texts (not too accurate, but good enough in lots of places)
+```python
+from nerge import get_quotes
+
+text = '''
+"ტესტი", - განაცხადა გიორგი გიორგაძემ    
+"PCR ტესტი 70 ლარად გვაქვს" აღნიშნა მარიამ მარიამიძემ
+'''
+
+quotes = get_quotes(text)
+
+print(quotes)
+# result
+{
+    "person": "გიორგი გიორგაძე",
+    "quote": "ტესტი",
+    "match_case": 1
+}
+```
+
+
+
 
 # Country extraction examples
 
@@ -84,3 +106,34 @@ print(m)
     "flag": "🇺🇸",
 }
 ```
+
+
+# supported python versions
+# limitations to be aware of
+### get_quotes
+This function is just simple pattern matching solution,
+so errors like that may be an issue:
+1)
+input:
+    '''
+    "PCR ტესტი 70 ლარად?" ვკითხულობთ მარიამ მარიამიძისთვის მიწერილი შეტყობინებიდან  
+    '''
+output:
+    [{'person': 'მარიამ მარიამიძე', 'quote': 'PCR ტესტი 70 ლარად?', 'match_case': 1}]
+
+Here the quote is from this person, but according to our rules was identified so.
+
+2) if there are quotes in quotes in text, result will not be full/correct
+input:
+    
+output:
+[
+    {
+    'person': 'ვლადიმერ ზელენსკი',
+     'quote': ' ლოდინს არ ვაპირებთ. ჩვენ არავისზე თავდასხმას არ ვაპირებთ, თუმცა ყველაფრისთვის მზად ვართ.',
+     'match_case': 2
+   }
+]
+Here result is shorter than it should be.
+
+We may decide to fix problems like that in the future with or without ML-based approaches.
