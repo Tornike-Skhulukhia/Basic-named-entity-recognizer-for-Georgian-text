@@ -122,6 +122,7 @@ Developed on version 3.8, should work on 3.6+
 ### get_quotes
 This function is just simple pattern matching solution,
 so errors like that may be an issue:\
+
 1)
 input:
     '''
