@@ -125,18 +125,18 @@ so errors like that may be an issue:\
 
 1) Not logical results:
 
-input:
+input:\
     '''
     "PCR ტესტი 70 ლარად?" ვკითხულობთ მარიამ მარიამიძისთვის მიწერილი შეტყობინებიდან  
     '''
-output:
+output:\
     [{'person': 'მარიამ მარიამიძე', 'quote': 'PCR ტესტი 70 ლარად?', 'match_case': 1}]
 
 Here the quote is not from this person, but according to our rules was identified so.
 
 1) if there are quotes in quotes in text, result will not be full/correct:
 
-input:
+input:\
     """
    უკრაინის პრეზიდენტმა ვლადიმერ ზელენსკიმ მიუნხენის უსაფრთხოების კონფერენციაზე
    სიტყვით გამოსვლისას იმ ვითარებაზე ისაუბრა, რომელიც ქვეყნის შიგნით
@@ -146,7 +146,7 @@ input:
    არავისზე თავდასხმას არ ვაპირებთ, თუმცა ყველაფრისთვის მზად ვართ."
    - ამბობს უკრაინის პრეზიდენტი
    """
-output:
+output:\
 [
     {
     'person': 'ვლადიმერ ზელენსკი',
