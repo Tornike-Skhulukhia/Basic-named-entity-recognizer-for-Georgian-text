@@ -134,7 +134,7 @@ output:\
 
 Here the quote is not from this person, but according to our rules was identified so.
 
-1) if there are quotes in quotes in text, result will not be full/correct:
+2) if there are quotes in quotes in text, result will not be full/correct:
 
 input:\
     """
