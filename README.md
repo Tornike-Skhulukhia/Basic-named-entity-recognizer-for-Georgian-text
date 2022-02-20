@@ -138,32 +138,35 @@ output:
 
 Here the quote is not from this person, but according to our rules was identified so.
 
-#### 2) if there are quotes in quotes in text, result will not be full/correct:
-
-input:
+#### 2) Extraction will miss some text/not work if formatting, is not good enough, like missing quotes at some places, or in case of quotes in quotes, between quotes and previous words there are no separation characters, ex:
 ```python
-
-    """
-   უკრაინის პრეზიდენტმა ვლადიმერ ზელენსკიმ მიუნხენის უსაფრთხოების კონფერენციაზე
-   სიტყვით გამოსვლისას იმ ვითარებაზე ისაუბრა, რომელიც ქვეყნის შიგნით
-   მიმდინარეობს. როგორც ზელენსკი აღნიშნავს, უკრაინა ყველაფრისთვის მზად არის.
-
-   "კუბოებში ჩაწოლას და რუსი 'სამხედროების' ლოდინს არ ვაპირებთ. ჩვენ
-   არავისზე თავდასხმას არ ვაპირებთ, თუმცა ყველაფრისთვის მზად ვართ."
-   - ამბობს უკრაინის პრეზიდენტი
-   """
+    '''
+    "111, 222, 333,"444 555" 666 777" - აცხადებს მარიამ მარიამიძე
+    '''
 ```
 output:
 ```python
-
-[
-    {
-    'person': 'ვლადიმერ ზელენსკი',
-     'quote': ' ლოდინს არ ვაპირებთ. ჩვენ არავისზე თავდასხმას არ ვაპირებთ, თუმცა ყველაფრისთვის მზად ვართ.',
-     'match_case': 2
-   }
-]
+    [{'person': 'მარიამ მარიამიძე', 'quote': ' 666 777', 'match_case': 1}]
 ```
+
+look how comma and quote are together after 333 (,"), which causes not correct result,
+but if there is a space between, result is correct:
+```python
+    '''
+    "111, 222, 333, "444 555" 666 777" - აცხადებს მარიამ მარიამიძე
+    '''
+```
+output:
+```python
+    [
+        {
+        'person': 'მარიამ მარიამიძე',
+        'quote': '111, 222, 333, "444 555" 666 777',
+        'match_case': 1
+        }
+    ]
+```
+
 
 Here result is shorter than it should be.
 

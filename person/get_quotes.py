@@ -45,7 +45,7 @@ QUOTE_ENDING_PHRASES = {
     "მიმართა",
 }
 
-_is_geo_letter = lambda l: 4304 <= ord(l) <= 4336
+_is_geo_letter_or_digit = lambda l: 4304 <= ord(l) <= 4336 or l.isdigit()
 
 
 def _tokenize_text(
@@ -55,7 +55,7 @@ def _tokenize_text(
     text = []
     for c in raw_text:
         # letter is georgian
-        if _is_geo_letter(c):
+        if _is_geo_letter_or_digit(c):
             text.append(c)
         else:
             text.append(" ")
@@ -120,7 +120,7 @@ def _encode_quotes_in_quotes(raw_text):
         else:
             # quote does not end previous quote
             if (
-                not _is_geo_letter(raw_text[index - 1])
+                not _is_geo_letter_or_digit(raw_text[index - 1])
                 and raw_text[index - 1] not in punctuation
             ):
                 encode_next_quote_char = True
@@ -243,8 +243,34 @@ def get_quotes(text):
 
     text, quotes_decoder = _encode_quotes_in_quotes(text)
 
-    # breakpoint()
     result = []
+    parts_splitted_by_quote_chars = re.split("|".join(QUOTE_LIKE_CHARS), text)
+
+    # to avoid incorrect matches when quote itself starts with
+    # person name and surname, so we may mistakenly match previous
+    # part without this checks
+    quote_text_indices_in_splitted_parts = set()
+    # start_i = 0 if text[0] in QUOTE_LIKE_CHARS else 1
+    start_i = 1
+
+    while start_i < len(parts_splitted_by_quote_chars):
+        quote_text_indices_in_splitted_parts.add(start_i)
+        start_i += 2
+
+    normalized_tokens_by_splitted_parts = [
+        _tokenize_text(part) for part in parts_splitted_by_quote_chars
+    ]
+
+    # print("text:", text)
+    # print(
+    #     "parts_splitted_by_quote_chars:",
+    #     parts_splitted_by_quote_chars,
+    # )
+    # print()
+    # print("normalized_tokens_by_splitted_parts:", normalized_tokens_by_splitted_parts)
+    # print("quote_text_indices_in_splitted_parts:", quote_text_indices_in_splitted_parts)
+
+    # print(parts_splitted_by_quote_chars)
 
     # cases N1 - basic | quoted text followed with person name and surname
     """
@@ -252,26 +278,18 @@ def get_quotes(text):
             "ტესტი", - განაცხადა გიორგი გიორგაძემ
             "დროა", - გიორგი გიორგაძე
     """
+
     # currently most reliable solution.
     # split with quote and quote-like symbols and see
     # where possible quote-ending phrase is followed with person name_surname.
     # if such a case/cases found, it should be quote of following person.
     # also match cases when no possible quote_ending_phrase is mentioned,
     # but person name_surname is mentioned directly afterwards
-    parts_splitted_by_quote_chars = re.split("|".join(QUOTE_LIKE_CHARS), text)
-
-    normalized_tokens_by_splitted_parts = [
-        _tokenize_text(part) for part in parts_splitted_by_quote_chars
-    ]
-
-    print(parts_splitted_by_quote_chars)
-    print()
-    print(normalized_tokens_by_splitted_parts)
-
-    # print(parts_splitted_by_quote_chars)
 
     for index in range(1, len(parts_splitted_by_quote_chars)):  # skip first one
-        # tokens = _tokenize_text(parts_splitted_by_quote_chars[index])
+        if index in quote_text_indices_in_splitted_parts:
+            continue
+
         tokens = normalized_tokens_by_splitted_parts[index]
 
         if len(tokens) < 2:
@@ -293,7 +311,6 @@ def get_quotes(text):
             author_candidate = extract_persons(f"{tokens[0]} {tokens[1]}")
 
             if author_candidate:
-                breakpoint()
                 result.append(
                     {
                         "person": author_candidate[0],
@@ -326,7 +343,9 @@ def get_quotes(text):
     if len(extracted_persons) == 1:
 
         for index in range(1, len(parts_splitted_by_quote_chars)):  # skip first one
-            # tokens = _tokenize_text(parts_splitted_by_quote_chars[index])
+            if index in quote_text_indices_in_splitted_parts:
+                continue
+
             tokens = normalized_tokens_by_splitted_parts[index]
 
             if len(tokens) == 0:
