@@ -8,18 +8,25 @@ Todo:
 """
 
 import re
+from uuid import uuid4
 from string import punctuation
-
 
 from .extract import extract_persons
 
 QUOTE_LIKE_CHARS = [
     '"',  # basic double quote
     "'",  # basic single quote
+    "“",  # quote start sign
+    "„",  # quote end sign
 ]
+
+# because of quote in quotes replacement
+for i in QUOTE_LIKE_CHARS:
+    assert "-" not in i
 
 QUOTE_ENDING_PHRASES = {
     "განაცხადა",
+    "განუცხადა",
     "აცხადებს",
     "ამბობს",
     "ნათქვამია",
@@ -34,19 +41,100 @@ QUOTE_ENDING_PHRASES = {
     "აღნიშნა",
     "აღნიშნულია",
     "აღნიშნავს",
+    "ამის შესახებ",
+    "მიმართა",
 }
+
+_is_geo_letter = lambda l: 4304 <= ord(l) <= 4336
 
 
 def _tokenize_text(
-    text,
-):  # we can replace this method with just language-specific char-only extractions
-    # rm punctuation marks
-    text = re.sub("|".join([re.escape(i) for i in punctuation]), " ", text)
+    raw_text,
+):
+    # leave georgian letters and replace all other symbol with space
+    text = []
+    for c in raw_text:
+        # letter is georgian
+        if _is_geo_letter(c):
+            text.append(c)
+        else:
+            text.append(" ")
+
+    text = "".join(text)
 
     # rm more than 1 spaces between and get resulting list
     text = text.split()
 
     return text
+
+
+def _encode_quotes_in_quotes(raw_text):
+    """
+    Sometimes we have texts like this:
+
+    "შეგახსენებთ, რომ რუსეთი მთელი თავისი ისტორიის განმავლობაში არასდროს არავის
+    დასხმია თავს( მტყუნის? :-) - ავტორის შენიშვნა). რუსეთი, რომელმაც ამდენი ომი გადაიტანა,
+    უკანასკნელი ქვეყანაა ევროპაში, რომელსაც საერთოდ სიტყვა "ომის" წარმოთქმა სურს".
+
+    Here we have a quote with quote inside of it, so our current basic
+    splitting by possible quotes approach will fail and think that first quote ends when
+    next quoted text starts (3-rd last word).
+
+    To make important step towards fixing this problem, lets encode quotes
+    in parts where main quote is not yet finished, with some random string,
+    so that out splitting method will continue working as these words will not
+    have valid quote-like strings. Of course we replace this encoded strings with
+    their basic quotes form at the end.
+
+    How to decide if specific quote is not the one that ends currently
+    started quote? According to our observation, real quote endings most of the
+    time happen without space between letter and quote mark, so if we have
+    any quote-like character after space(not directly followed after word, without space)
+    and are in a place where quoting started somewhere and not ended yet,
+    we encode that quote mark and its ending pair.
+    """
+
+    text = []
+
+    in_quoted_part = False
+    encode_next_quote_char = False
+    decoder = {}  # what encoded string replaces what quote mark
+
+    for index, c in enumerate(raw_text):
+        if c not in QUOTE_LIKE_CHARS:
+            text.append(c)
+            continue
+
+        if encode_next_quote_char:
+            encoded_char = str(uuid4())
+            text.append(encoded_char)
+
+            decoder[encoded_char] = c
+
+            encode_next_quote_char = False
+            continue
+
+        if not in_quoted_part:
+            in_quoted_part = True
+            text.append(c)
+        else:
+            # quote does not end previous quote
+            if (
+                not _is_geo_letter(raw_text[index - 1])
+                and raw_text[index - 1] not in punctuation
+            ):
+                encode_next_quote_char = True
+
+                encoded_char = str(uuid4())
+                decoder[encoded_char] = c
+                text.append(encoded_char)
+            else:
+                in_quoted_part = False
+                text.append(c)
+
+    text = "".join(text)
+
+    return text, decoder
 
 
 def _preprocess_text(text):
@@ -153,6 +241,9 @@ def get_quotes(text):
     """
     text = _preprocess_text(text)
 
+    text, quotes_decoder = _encode_quotes_in_quotes(text)
+
+    # breakpoint()
     result = []
 
     # cases N1 - basic | quoted text followed with person name and surname
@@ -167,10 +258,21 @@ def get_quotes(text):
     # if such a case/cases found, it should be quote of following person.
     # also match cases when no possible quote_ending_phrase is mentioned,
     # but person name_surname is mentioned directly afterwards
-    parts = re.split("|".join(QUOTE_LIKE_CHARS), text)
+    parts_splitted_by_quote_chars = re.split("|".join(QUOTE_LIKE_CHARS), text)
 
-    for index in range(1, len(parts)):  # skip first one
-        tokens = _tokenize_text(parts[index])
+    normalized_tokens_by_splitted_parts = [
+        _tokenize_text(part) for part in parts_splitted_by_quote_chars
+    ]
+
+    print(parts_splitted_by_quote_chars)
+    print()
+    print(normalized_tokens_by_splitted_parts)
+
+    # print(parts_splitted_by_quote_chars)
+
+    for index in range(1, len(parts_splitted_by_quote_chars)):  # skip first one
+        # tokens = _tokenize_text(parts_splitted_by_quote_chars[index])
+        tokens = normalized_tokens_by_splitted_parts[index]
 
         if len(tokens) < 2:
             continue
@@ -179,10 +281,11 @@ def get_quotes(text):
             author_candidate = extract_persons(f"{tokens[1]} {tokens[2]}")
 
             if author_candidate:
+
                 result.append(
                     {
                         "person": author_candidate[0],
-                        "quote": parts[index - 1],
+                        "quote": parts_splitted_by_quote_chars[index - 1],
                         "match_case": 1,
                     }
                 )
@@ -190,10 +293,11 @@ def get_quotes(text):
             author_candidate = extract_persons(f"{tokens[0]} {tokens[1]}")
 
             if author_candidate:
+                breakpoint()
                 result.append(
                     {
                         "person": author_candidate[0],
-                        "quote": parts[index - 1],
+                        "quote": parts_splitted_by_quote_chars[index - 1],
                         "match_case": 1,
                     }
                 )
@@ -220,19 +324,21 @@ def get_quotes(text):
     extracted_persons = extract_persons(text)
 
     if len(extracted_persons) == 1:
-        parts = re.split("|".join(QUOTE_LIKE_CHARS), text)
 
-        for index in range(1, len(parts)):  # skip first one
-            tokens = _tokenize_text(parts[index])
+        for index in range(1, len(parts_splitted_by_quote_chars)):  # skip first one
+            # tokens = _tokenize_text(parts_splitted_by_quote_chars[index])
+            tokens = normalized_tokens_by_splitted_parts[index]
 
             if len(tokens) == 0:
                 continue
 
-            if tokens[0] in QUOTE_ENDING_PHRASES:
+            if tokens[0] in QUOTE_ENDING_PHRASES or (
+                len(tokens) > 1 and f"{tokens[0]} {tokens[1]}" in QUOTE_ENDING_PHRASES
+            ):
                 result.append(
                     {
                         "person": extracted_persons[0],
-                        "quote": parts[index - 1],
+                        "quote": parts_splitted_by_quote_chars[index - 1],
                         "match_case": 2,
                     }
                 )
@@ -248,5 +354,11 @@ def get_quotes(text):
             seen_person_and_quotes.add(key)
 
             deduplicated_result.append(i)
+
+    # decode - will slow things a lot, but may be worth it, as
+    # we do not want to change original text much, may optimize later...
+    for i in result:
+        for encoded_char, original_char in quotes_decoder.items():
+            i["quote"] = i["quote"].replace(encoded_char, original_char)
 
     return deduplicated_result
