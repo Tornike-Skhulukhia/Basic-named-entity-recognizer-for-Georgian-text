@@ -8,16 +8,19 @@ Todo:
 """
 
 import re
-from uuid import uuid4
 from string import punctuation
+from uuid import uuid4
 
+from . import SURNAMES
 from .extract import extract_persons
+from .util import normalize_surname
 
 QUOTE_LIKE_CHARS = [
     '"',  # basic double quote
     "'",  # basic single quote
     "“",  # quote start sign
     "„",  # quote end sign
+    "’’",  # WTF (What the function :) ?
 ]
 
 # because of quote in quotes replacement
@@ -43,6 +46,8 @@ QUOTE_ENDING_PHRASES = {
     "აღნიშნავს",
     "ამის შესახებ",
     "მიმართა",
+    "ასე ეხმიანება",
+    "ეხმიანება",
 }
 
 _is_geo_letter_or_digit = lambda l: 4304 <= ord(l) <= 4336 or l.isdigit()
@@ -66,6 +71,14 @@ def _tokenize_text(
     text = text.split()
 
     return text
+
+
+def get_normalized_surname_if_surname(word):
+    normalized = normalize_surname(word)
+
+    if normalized in SURNAMES:
+        return normalized
+    return False
 
 
 def _encode_quotes_in_quotes(raw_text):
@@ -147,7 +160,7 @@ def _preprocess_text(text):
     return text
 
 
-def get_quotes(text):
+def get_quotes(text, v=0):
     """
     extract quotes and persons who say that in given Georgian text.
 
@@ -261,16 +274,23 @@ def get_quotes(text):
         _tokenize_text(part) for part in parts_splitted_by_quote_chars
     ]
 
-    # print("text:", text)
-    # print(
-    #     "parts_splitted_by_quote_chars:",
-    #     parts_splitted_by_quote_chars,
-    # )
-    # print()
-    # print("normalized_tokens_by_splitted_parts:", normalized_tokens_by_splitted_parts)
-    # print("quote_text_indices_in_splitted_parts:", quote_text_indices_in_splitted_parts)
-
-    # print(parts_splitted_by_quote_chars)
+    if v:
+        print("text:", text)
+        print(
+            "parts_splitted_by_quote_chars:",
+            parts_splitted_by_quote_chars,
+        )
+        print()
+        print(
+            "normalized_tokens_by_splitted_parts:",
+            normalized_tokens_by_splitted_parts,
+        )
+        print()
+        print(
+            "quote_text_indices_in_splitted_parts:",
+            quote_text_indices_in_splitted_parts,
+        )
+        print()
 
     # cases N1 - basic | quoted text followed with person name and surname
     """
@@ -337,12 +357,65 @@ def get_quotes(text):
     "გუშინ წინაც ვფიქრობდი, მაგრამ გადავიფიქრე", დაამატა გიორგიმ.
     """
 
-    # so it after case 1 from start, to make code much clearer
-    extracted_persons = extract_persons(text)
+    # so it after case 1 from start, to make code much clearer.
+
+    # extract from non-quote parts, as sometimes people
+    # mention other persons in quotes, but they are not actual persons
+    # who say something in the text
+    text_to_extract_persons_from = " ".join(
+        [
+            i
+            for index, i in enumerate(parts_splitted_by_quote_chars)
+            if index not in quote_text_indices_in_splitted_parts
+        ]
+    )
+    extracted_persons = extract_persons(text_to_extract_persons_from)
+
+    if v:
+        print()
+        print("extracted_persons", extracted_persons)
+        print()
 
     if len(extracted_persons) == 1:
 
-        for index in range(1, len(parts_splitted_by_quote_chars)):  # skip first one
+        for index in range(
+            1, len(parts_splitted_by_quote_chars)
+        ):  # skip first one
+            if index in quote_text_indices_in_splitted_parts:
+                continue
+
+            # breakpoint()
+            tokens = normalized_tokens_by_splitted_parts[index]
+
+            if len(tokens) == 0:
+                continue
+
+            if tokens[0] in QUOTE_ENDING_PHRASES or (
+                len(tokens) > 1
+                and f"{tokens[0]} {tokens[1]}" in QUOTE_ENDING_PHRASES
+            ):
+                result.append(
+                    {
+                        "person": extracted_persons[0],
+                        "quote": parts_splitted_by_quote_chars[index - 1],
+                        "match_case": 2,
+                    }
+                )
+    # case 3
+    # at least 1 person identified on page and after some quote-ending-like text
+    # we have just the surname part of a person, without name.
+    # in this case, check if this is the surname of already fully identified person,
+    # consider that this is quote of that person
+    # ex:
+    """
+    გიორგი გიორგაძე დღეს რაღაცას აკეთებს.
+
+    "მე რაღაცას ვაკეთებ" - განაცხადა გიორგაძემ
+    """
+    if len(extracted_persons) > 0:
+        for index in range(
+            1, len(parts_splitted_by_quote_chars)
+        ):  # skip first one
             if index in quote_text_indices_in_splitted_parts:
                 continue
 
@@ -351,14 +424,31 @@ def get_quotes(text):
             if len(tokens) == 0:
                 continue
 
-            if tokens[0] in QUOTE_ENDING_PHRASES or (
-                len(tokens) > 1 and f"{tokens[0]} {tokens[1]}" in QUOTE_ENDING_PHRASES
-            ):
+            if tokens[0] not in QUOTE_ENDING_PHRASES:
+                continue
+
+            # breakpoint()
+            normalized_possible_surname = get_normalized_surname_if_surname(
+                tokens[1]
+            )
+
+            if not normalized_possible_surname:
+                continue
+
+            # if we have only one unique person name_surname on page with given surname,
+            # assume that this quote is also from this person name_surname
+            possible_person_matches = [
+                i
+                for i in extracted_persons
+                if i.endswith(f" {normalized_possible_surname}")
+            ]
+
+            if len(possible_person_matches) == 1:
                 result.append(
                     {
-                        "person": extracted_persons[0],
+                        "person": possible_person_matches[0],
                         "quote": parts_splitted_by_quote_chars[index - 1],
-                        "match_case": 2,
+                        "match_case": 3,
                     }
                 )
 

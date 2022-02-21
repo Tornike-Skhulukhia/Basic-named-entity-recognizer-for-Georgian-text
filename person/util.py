@@ -84,7 +84,10 @@ def normalize_surname(surname):
     # ნათესაობითი & მოქმედებითი
     if last_3_letters in ["ძის", "ძით"]:
         return f"{surname[:-2]}ე"
-    if last_3_letters in ["ლის", "ლით", "ლად"] and last_4_letters[0] not in vowels:
+    if (
+        last_3_letters in ["ლის", "ლით", "ლად"]
+        and last_4_letters[0] not in vowels
+    ):
         return f"{surname[:-3]}ელი"
     if last_3_letters in ["ლად"] and last_4_letters[0] in vowels:
         return f"{surname[:-2]}ი"
