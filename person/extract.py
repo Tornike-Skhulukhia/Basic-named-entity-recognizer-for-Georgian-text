@@ -47,11 +47,19 @@ def extract_persons(text):
         next_word = splitted_words[i + 1]
 
         # 2 word-having name & 1 word-having surname test | ex: name = "სანდრა ელისაბედ", surname="რულოვსი"
-        if i != len(splitted_words) - 2 and curr_word in NAMES and next_word in NAMES:
-            normalized_possible_surname = normalize_surname(splitted_words[i + 2])
+        if (
+            i != len(splitted_words) - 2
+            and curr_word in NAMES
+            and next_word in NAMES
+        ):
+            normalized_possible_surname = normalize_surname(
+                splitted_words[i + 2]
+            )
 
             if normalized_possible_surname in SURNAMES:
-                result.add(f"{curr_word} {next_word} {normalized_possible_surname}")
+                result.add(
+                    f"{curr_word} {next_word} {normalized_possible_surname}"
+                )
                 skip_indexes.update([i, i + 1, i + 2])
                 continue
 

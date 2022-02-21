@@ -31,7 +31,7 @@ print(s)
 "M"
 ```
 
-### Basic(just letter-based) name/surname translation to English
+### basic(just letter-based) name/surname translation to English
 ```python
 from nerge import translate_to_en
 
@@ -41,6 +41,35 @@ print(t)
 # result
 'Koba Gvenetadze'
 ```
+
+### get person quotes from texts (not too accurate, but good enough in lots of places)
+```python
+from nerge import get_quotes
+
+text = '''
+"ტესტი", - განაცხადა გიორგი გიორგაძემ    
+"PCR ტესტი 70 ლარად გვაქვს" აღნიშნა მარიამ მარიამიძემ
+'''
+
+quotes = get_quotes(text)
+
+print(quotes)
+# result
+[
+    {
+        'person': 'გიორგი გიორგაძე',
+        'quote': 'ტესტი',
+        'match_case': 1
+    },
+    {
+        'person': 'მარიამ მარიამიძე',
+        'quote': 'PCR ტესტი 70 ლარად გვაქვს',
+        'match_case': 1
+    }
+]
+```
+
+
 
 
 # Country extraction examples
@@ -84,3 +113,62 @@ print(m)
     "flag": "🇺🇸",
 }
 ```
+
+
+# supported python versions
+Developed on version 3.8, should work on 3.6+
+
+# limitations to be aware of
+### get_quotes
+This function is just simple pattern matching solution,
+so errors like that may be an issue:
+
+#### 1) Not logical results:
+
+input:
+```python
+    '''
+    "PCR ტესტი 70 ლარად?" ვკითხულობთ მარიამ მარიამიძისთვის მიწერილი შეტყობინებიდან  
+    '''
+```
+output:
+```python
+    [{'person': 'მარიამ მარიამიძე', 'quote': 'PCR ტესტი 70 ლარად?', 'match_case': 1}]
+```
+
+Here the quote is not from this person, but according to our rules was identified so.
+
+#### 2) Extraction will miss some text/not work if formatting, is not good enough, like missing quotes at some places, or in case of quotes in quotes, between quotes and previous words there are no separation characters, ex:
+```python
+    '''
+    "111, 222, 333,"444 555" 666 777" - აცხადებს მარიამ მარიამიძე
+    '''
+```
+output:
+```python
+    [{'person': 'მარიამ მარიამიძე', 'quote': ' 666 777', 'match_case': 1}]
+```
+
+look how comma and quote are together after 333 (,"), which causes not correct result,
+but if there is a space between, result is correct:
+```python
+    '''
+    "111, 222, 333, "444 555" 666 777" - აცხადებს მარიამ მარიამიძე
+    '''
+```
+output:
+```python
+    [
+        {
+        'person': 'მარიამ მარიამიძე',
+        'quote': '111, 222, 333, "444 555" 666 777',
+        'match_case': 1
+        }
+    ]
+```
+
+
+Here result is shorter than it should be.
+
+# Plans/Todos
+We may decide to fix problems like that in the future with or without ML-based approaches.
