@@ -378,9 +378,7 @@ def get_quotes(text, v=0):
 
     if len(extracted_persons) == 1:
 
-        for index in range(
-            1, len(parts_splitted_by_quote_chars)
-        ):  # skip first one
+        for index in range(1, len(parts_splitted_by_quote_chars)):  # skip first one
             if index in quote_text_indices_in_splitted_parts:
                 continue
 
@@ -391,8 +389,7 @@ def get_quotes(text, v=0):
                 continue
 
             if tokens[0] in QUOTE_ENDING_PHRASES or (
-                len(tokens) > 1
-                and f"{tokens[0]} {tokens[1]}" in QUOTE_ENDING_PHRASES
+                len(tokens) > 1 and f"{tokens[0]} {tokens[1]}" in QUOTE_ENDING_PHRASES
             ):
                 result.append(
                     {
@@ -413,24 +410,20 @@ def get_quotes(text, v=0):
     "მე რაღაცას ვაკეთებ" - განაცხადა გიორგაძემ
     """
     if len(extracted_persons) > 0:
-        for index in range(
-            1, len(parts_splitted_by_quote_chars)
-        ):  # skip first one
+        for index in range(1, len(parts_splitted_by_quote_chars)):  # skip first one
             if index in quote_text_indices_in_splitted_parts:
                 continue
 
             tokens = normalized_tokens_by_splitted_parts[index]
 
-            if len(tokens) == 0:
+            if len(tokens) < 3:
                 continue
 
             if tokens[0] not in QUOTE_ENDING_PHRASES:
                 continue
 
             # breakpoint()
-            normalized_possible_surname = get_normalized_surname_if_surname(
-                tokens[1]
-            )
+            normalized_possible_surname = get_normalized_surname_if_surname(tokens[1])
 
             if not normalized_possible_surname:
                 continue
