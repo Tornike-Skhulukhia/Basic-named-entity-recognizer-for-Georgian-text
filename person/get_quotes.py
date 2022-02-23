@@ -365,6 +365,7 @@ def get_quotes(text, v=0):
 
     """
     if len(extracted_persons) > 0:
+
         extracted_surames_counter = Counter([i.split()[-1] for i in extracted_persons])
 
         for quote_index, quote_text in quote_indices_and_texts.items():
@@ -381,12 +382,19 @@ def get_quotes(text, v=0):
                 continue
 
             possible_surname = _get_normalized_surname_if_surname(tokens[1])
+            print("possible_surname", possible_surname)
+
+            # if possible_surname == "სააკაშვილი":
+            #     breakpoint()
 
             if possible_surname and extracted_surames_counter[possible_surname] == 1:
+                person = [
+                    i for i in extracted_persons if i.split()[-1] == possible_surname
+                ][0]
 
                 result.append(
                     {
-                        "person": extracted_persons[0],
+                        "person": person,
                         "quote": quote_text,
                         "match_case": 3,
                     }
