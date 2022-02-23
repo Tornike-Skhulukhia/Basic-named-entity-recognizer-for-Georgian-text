@@ -8,9 +8,9 @@ Todo:
 """
 
 import re
+from collections import Counter
 from string import punctuation
 from uuid import uuid4
-
 
 from . import SURNAMES
 from .extract import extract_persons
@@ -306,7 +306,10 @@ def get_quotes(text, v=0):
         if quote_index in already_matched_quotes_indices:
             continue
 
-        tokens = normalized_splitted_parts[quote_index + 1]
+        try:
+            tokens = normalized_splitted_parts[quote_index + 1]
+        except IndexError:
+            continue
 
         if len(tokens) < 3 or tokens[0] not in QUOTE_ENDING_PHRASES:
             continue
@@ -361,23 +364,25 @@ def get_quotes(text, v=0):
         "ვილაპარაკე", განაცხადა გიორგაძემ ჟურნალისტებთან.
 
     """
-    if len(extracted_persons) == 1:
+    if len(extracted_persons) > 0:
+        extracted_surames_counter = Counter([i.split()[-1] for i in extracted_persons])
+
         for quote_index, quote_text in quote_indices_and_texts.items():
 
             if quote_index in already_matched_quotes_indices:
                 continue
 
-            tokens = normalized_splitted_parts[quote_index + 1]
+            try:
+                tokens = normalized_splitted_parts[quote_index + 1]
+            except IndexError:
+                continue
 
             if len(tokens) < 2 or tokens[0] not in QUOTE_ENDING_PHRASES:
                 continue
 
             possible_surname = _get_normalized_surname_if_surname(tokens[1])
 
-            if (
-                possible_surname
-                and possible_surname == extracted_persons[0].split()[-1]
-            ):
+            if possible_surname and extracted_surames_counter[possible_surname] == 1:
 
                 result.append(
                     {
