@@ -10,15 +10,18 @@ def _country_is_a_match(i, unique_words, text):
             return True
 
     # is any word that starts with ... there?
-    for index, j in enumerate(i.get("word_should_start", [])):
-        if i["_word_should_start_spaces_nums"] == 0:
+    for index, (word_should_start, spaces_num_in_word_should_start) in enumerate(
+        zip(i["word_should_start"], i["_word_should_start_spaces_nums"])
+    ):
+
+        if spaces_num_in_word_should_start == 0:
             # if it is one word start
             for k in unique_words:
-                if k.startswith(j):
+                if k.startswith(word_should_start):
                     return True
         else:
             # for more than 1 word starts (like "შეერთებულ შტატებ") we have to go through full text
-            if j in text:
+            if word_should_start in text:
                 return True
 
     return False

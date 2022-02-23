@@ -373,7 +373,7 @@ def get_quotes(text, v=0):
 
     if v:
         print()
-        print("extracted_persons", extracted_persons)
+        print("extracted_persons_in_non_quoted_text", extracted_persons)
         print()
 
     if len(extracted_persons) == 1:
@@ -416,7 +416,7 @@ def get_quotes(text, v=0):
 
             tokens = normalized_tokens_by_splitted_parts[index]
 
-            if len(tokens) < 3:
+            if len(tokens) < 2:
                 continue
 
             if tokens[0] not in QUOTE_ENDING_PHRASES:
