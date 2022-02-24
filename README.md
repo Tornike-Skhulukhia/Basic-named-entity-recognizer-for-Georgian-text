@@ -119,6 +119,12 @@ print(m)
 Developed on version 3.8, should work on 3.6+
 
 # limitations to be aware of
+
+### get_persons
+names and surnames list in __init__.py files are not written and checked by hand, so 
+in this long lists there may be misplacement. They are fixed when discovered, 
+if you see some of them, please make a pull request / let us know about it.
+
 ### get_quotes
 This function is just simple pattern matching solution,
 so errors like that may be an issue:

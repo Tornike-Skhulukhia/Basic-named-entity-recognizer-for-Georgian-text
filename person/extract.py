@@ -30,6 +30,10 @@ def extract_persons(text):
     only relevant letters for extraction, so if for example input text
     contains something like "first_name (middle_name) last_name",
     extracted result will be "first_name middle_name last_name".
+
+    Edit: added support for 4 letter full name & surnames(ex: ურსულა ფონ დერ ლაიენი),
+    in this case, we assume first 3 word from full name_surname are names, and last is surname
+    which is possible to change form in a sentence.
     """
 
     text = _normalize_text(text)
@@ -46,20 +50,26 @@ def extract_persons(text):
         curr_word = splitted_words[i]
         next_word = splitted_words[i + 1]
 
-        # 2 word-having name & 1 word-having surname test | ex: name = "სანდრა ელისაბედ", surname="რულოვსი"
-        if (
-            i != len(splitted_words) - 2
-            and curr_word in NAMES
-            and next_word in NAMES
+        if i < len(splitted_words) - 3 and all(
+            [curr_word in NAMES, next_word in NAMES, splitted_words[i + 2] in NAMES]
         ):
-            normalized_possible_surname = normalize_surname(
-                splitted_words[i + 2]
-            )
+
+            normalized_possible_surname = normalize_surname(splitted_words[i + 3])
 
             if normalized_possible_surname in SURNAMES:
+
                 result.add(
-                    f"{curr_word} {next_word} {normalized_possible_surname}"
+                    f"{curr_word} {next_word} {splitted_words[i + 2]} {normalized_possible_surname}"
                 )
+                skip_indexes.update([i, i + 1, i + 2, i + 3])
+                continue
+
+        # 2 word-having name & 1 word-having surname test | ex: name = "სანდრა ელისაბედ", surname="რულოვსი"
+        if i < len(splitted_words) - 2 and curr_word in NAMES and next_word in NAMES:
+            normalized_possible_surname = normalize_surname(splitted_words[i + 2])
+
+            if normalized_possible_surname in SURNAMES:
+                result.add(f"{curr_word} {next_word} {normalized_possible_surname}")
                 skip_indexes.update([i, i + 1, i + 2])
                 continue
 
