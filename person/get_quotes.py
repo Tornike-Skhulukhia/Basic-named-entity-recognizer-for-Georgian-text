@@ -16,12 +16,19 @@ from . import SURNAMES
 from .extract import extract_persons
 from .util import normalize_surname
 
+# maybe in the future we should normalize text -
+# leave just one specific type on normal quote -" for
+# full quotes and one quote - ' for inside quotes.
+# this will change initial text more then currently,
+# but it will remove the need of encode/decode parts
+
 QUOTE_LIKE_CHARS = [
     '"',  # basic double quote
     "'",  # basic single quote
     "“",  # quote start sign
     "„",  # quote end sign
     "’’",  # WTF (What the function :) ?
+    "”",  # from other site
 ]
 
 # because of quote in quotes replacement
@@ -293,6 +300,8 @@ def get_quotes(text, v=0):
     )
     extracted_persons = extract_persons(text_to_extract_persons_from)
 
+    if v:
+        print(f"{extracted_persons=}")
     ####################################################
 
     """
@@ -368,6 +377,9 @@ def get_quotes(text, v=0):
 
         extracted_surames_counter = Counter([i.split()[-1] for i in extracted_persons])
 
+        if v:
+            print(f"{extracted_surames_counter=}, {quote_indices_and_texts=}")
+
         for quote_index, quote_text in quote_indices_and_texts.items():
 
             if quote_index in already_matched_quotes_indices:
@@ -382,10 +394,6 @@ def get_quotes(text, v=0):
                 continue
 
             possible_surname = _get_normalized_surname_if_surname(tokens[1])
-            print("possible_surname", possible_surname)
-
-            # if possible_surname == "სააკაშვილი":
-            #     breakpoint()
 
             if possible_surname and extracted_surames_counter[possible_surname] == 1:
                 person = [
