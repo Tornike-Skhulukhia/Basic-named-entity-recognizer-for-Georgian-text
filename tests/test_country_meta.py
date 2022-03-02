@@ -7,7 +7,7 @@ def test_georgia():
     for key, value in {
         "official_name": "Georgia",
         "name_en": "Georgia",
-        "name_ge": "საქართველოს",
+        "name_ge": "საქართველო",
         "alpha_3_code": "GEO",
         "numeric_code": 268,
         "flag": "🇬🇪",

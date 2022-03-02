@@ -29,6 +29,7 @@ QUOTE_LIKE_CHARS = [
     "„",  # quote end sign
     "’’",  # WTF (What the function :) ?
     "”",  # from other site
+    '"',  # other double quote
 ]
 
 # because of quote in quotes replacement
@@ -165,6 +166,10 @@ def _preprocess_text(text):
     # rm newlines
     text = re.sub("\n", " ", text)
 
+    # rm double quotes with
+    for i in QUOTE_LIKE_CHARS:
+        text = text.replace(i * 2, '"')
+
     # rm multiple continuous spaces
     text = " ".join(text.split())
 
@@ -298,6 +303,7 @@ def get_quotes(text, v=0):
             if index not in quote_indices_and_texts
         ]
     )
+
     extracted_persons = extract_persons(text_to_extract_persons_from)
 
     if v:
