@@ -179,3 +179,10 @@ def test_11():
     result = ["TD", "SD", "SS"]
 
     assert sorted(result) == extract_countries(text)
+
+def test_11():
+    text = '''ჩვენი მიზანია, საქართველოს მოსახლეს შეეძლოს მოსვლა, ამიტომ ვფიქრობთ, საშუალო საფასო სეგმენტზე იქნება მორგებული", - განაცხადა bmg-სთან საუბრისას ტოგონიძემ. '''
+
+    result = ["GE"]
+
+    assert sorted(result) == extract_countries(text)

@@ -1770,7 +1770,7 @@ DATA = {
     "TG": {
         "official_name": "Togo",
         "name_en": "Togo",
-        "name_ge": "Წასვლა",
+        "name_ge": "ტოგო",
         "alpha_3_code": "TGO",
         "numeric_code": 768,
         "flag": "🇹🇬",

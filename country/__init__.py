@@ -1067,7 +1067,24 @@ COUNTRIES_EXTRACT_INFO = [
     #     "country_code": "TL",
     #     "word_should_start": [],
     # },
-    {"iso_country_name": "Togo", "country_code": "TG", "word_should_start": ["ტოგო"]},
+    {
+        "iso_country_name": "Togo",
+        "country_code": "TG",
+        "word_should_start": [],
+        "possible_full_words": [
+            "ტოგო",
+            "ტოგოში",
+            "ტოგომ",
+            "ტოგოს",
+            "ტოგოური",
+            "ტოგოურმა",
+            "ტოგოურ",
+            "ტოგოელი",
+            "ტოგოელ",
+            "ტოგოელმა",
+        
+        ],
+    },
     # {
     #     "iso_country_name": "Tokelau",
     #     "country_code": "TK",
