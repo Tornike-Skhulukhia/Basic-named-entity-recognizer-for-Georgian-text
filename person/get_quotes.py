@@ -7,6 +7,15 @@ Todo:
     by that person. 
 """
 
+"""
+Todo:
+    add case that matches these:
+        
+        "მოგიწოდებთ, მიმართეთ ნორვეგიის ნობელის კომიტეტს, 
+          განიხილოს წინადადება ვლადიმერ ზელენსკისთვის მშვიდობის დარგში ნობელის პრემიის მინიჭების თაობაზე!",
+        - ამის შესახებ "მთავარი არხის" გენერალური დირექტორი ნიკა გვარამია წერს.
+"""
+
 import re
 from collections import Counter
 from string import punctuation

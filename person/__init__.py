@@ -1,6 +1,13 @@
 # currently supporting georgian people name & surnames, we may add non Georgians later
 
 # rules for names
+
+"""
+Todo:
+    remove common words fom these list that
+    most probably are not correctly here(we found a few during the usage of this libary and still removing...)
+"""
+
 """
 Name must have no spaces and only contain only Georgian letters,
 if we want to extract names with possible dash or space in it, add 
@@ -8792,7 +8799,6 @@ NAMES = {
     "დანილო",
     "ალიშია",
     "მარიანა",
-    "მისი",
     "ვანა",
     "მაკალებ",
     "სონაკში",
@@ -13168,7 +13174,6 @@ NAMES = {
     "ალიევ",
     "ჰოსსეინალი",
     "ნიკოლაოს",
-    "ჩეხეთის",
     "გურანდუხტ",
     "მელთემი",
     "ტაფდიხ",
@@ -15598,7 +15603,6 @@ SURNAMES = {
     "სობელი",
     "თემბლინი",
     "შვარცენეგერი",
-    "როლი",
     "ჟირო",
     "პაკე",
     "კაილი",
@@ -47892,7 +47896,6 @@ SURNAMES = {
     "ნელიუპშის",
     "წიპტაური",
     "იაზჯ",
-    "რესპუბლიკა",
     "ჩაქირჯალი",
     "ხუსეინბეილი",
     "ბოსტანოვ",

@@ -173,8 +173,10 @@ output:
     ]
 ```
 
+# error to add in readme case - "მერი ვიტალი კლიჩკო"
 
 Here result is shorter than it should be.
 
 # Plans/Todos
 We may decide to fix problems like that in the future with or without ML-based approaches.
+
