@@ -173,7 +173,7 @@ output:
     ]
 ```
 
-# error to add in readme case - "მერი ვიტალი კლიჩკო"
+# error to add in readme case - " მერი ვიტალი კლიჩკო, მერი კახა კალაძე :-( "
 
 Here result is shorter than it should be.
 

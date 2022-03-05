@@ -284,6 +284,9 @@ def get_quotes(text, v=0):
 
     text = _preprocess_text(text)
 
+    if v:
+        print(f"preprocessed_text={text}")
+
     text, quotes_decoder = _encode_quotes_in_quotes(text)
 
     result = []
@@ -316,6 +319,8 @@ def get_quotes(text, v=0):
     extracted_persons = extract_persons(text_to_extract_persons_from)
 
     if v:
+        print(f'{text=}')
+        print(f'{parts_splitted_by_quote_chars=}')
         print(f"{extracted_persons=}")
     ####################################################
 
