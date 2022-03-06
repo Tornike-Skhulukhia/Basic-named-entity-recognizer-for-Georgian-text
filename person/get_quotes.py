@@ -39,6 +39,7 @@ QUOTE_LIKE_CHARS = [
     "’’",  # WTF (What the function :) ?
     "”",  # from other site
     '"',  # other double quote
+    ",,", # other weirdness yohoo,
 ]
 
 # because of quote in quotes replacement

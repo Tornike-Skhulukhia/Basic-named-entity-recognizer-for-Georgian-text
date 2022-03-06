@@ -186,7 +186,7 @@ DATA = {
     "BM": {
         "official_name": "Bermuda",
         "name_en": "Bermuda",
-        "name_ge": "ბერმუდის",
+        "name_ge": "ბერმუდი",
         "alpha_3_code": "BMU",
         "numeric_code": 60,
         "flag": "🇧🇲",
@@ -1386,7 +1386,7 @@ DATA = {
     "PE": {
         "official_name": "Peru",
         "name_en": "Peru",
-        "name_ge": "პერუს",
+        "name_ge": "პერუ",
         "alpha_3_code": "PER",
         "numeric_code": 604,
         "flag": "🇵🇪",
