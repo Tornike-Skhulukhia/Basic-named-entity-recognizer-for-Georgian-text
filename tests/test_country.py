@@ -186,3 +186,12 @@ def test_11():
     result = ["GE"]
 
     assert sorted(result) == extract_countries(text)
+
+def test_12():
+    text = '''
+    მთავრობის გადაწყვეტილებით, ყველას, ვინც მოიხმარს 200 კილოვატზე ნაკლებ ელექტროენერგიას და 200 კუბურ მეტრზე ნაკლებ ბუნებრივ აირს, კომუნალური გადასახადი სამი თვის განმავლობაში სრულად დაუფინანსდება 
+    '''
+
+    result = []
+
+    assert sorted(result) == extract_countries(text)

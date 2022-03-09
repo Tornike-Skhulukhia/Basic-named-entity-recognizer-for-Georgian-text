@@ -34,7 +34,7 @@ def _normalize_text(text):
         text = text.replace(i, " ")
 
     # replace words/phrases that may give incorrect matches
-    for i in ["აშშ დოლარ", "\n"]:
+    for i in ["აშშ დოლარ", "\n", "კუბურ მეტრ"]:
         text = text.replace(i, " ")
 
     return text
