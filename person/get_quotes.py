@@ -451,7 +451,6 @@ def get_quotes(text, v=0):
 
         author_candidate = extract_persons(here_should_be_person_mentioned)
 
-        print(f'{author_candidate=}')
         if author_candidate:
             result.append(
                 {
