@@ -1,7 +1,8 @@
 # Basic named entity recognizer for Georgian text
 Non ML-based approach to extract named entities from Georgian text using Python.
-Currently supported extractions are for countries and persons.
+Currently supported extractions are for countries and persons + basic person quotes extractor functionality.
 For better idea how accurate these extractions are, please see files in tests directory and do your own testing.
+Currently the library uses just pattern-matching, not any language semantics or other similar logic.
 
 # Person extraction examples
 
@@ -174,6 +175,7 @@ output:
 ```
 
 # error to add in readme case - " მერი ვიტალი კლიჩკო, მერი კახა კალაძე :-( "
+# error to add in readme case - "  ... განადხადა გიორგი გიორგაძის დამ :-( "
 
 Here result is shorter than it should be.
 

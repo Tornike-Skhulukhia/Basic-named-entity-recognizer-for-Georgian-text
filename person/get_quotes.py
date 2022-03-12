@@ -16,6 +16,7 @@ Todo:
         - ამის შესახებ "მთავარი არხის" გენერალური დირექტორი ნიკა გვარამია წერს.
 """
 
+from lib2to3.pgen2.tokenize import tokenize
 import re
 from collections import Counter
 from string import punctuation
@@ -344,6 +345,38 @@ def get_quotes(text, v=0):
         if len(tokens) < 3 or tokens[0] not in QUOTE_ENDING_PHRASES:
             continue
 
+        
+        # get max length of 4 name_surname combo if possible | ex: ურსულა ფონ დერ ლაიენი
+        if len(tokens) >= 5:
+            author_candidate = extract_persons(f"{tokens[1]} {tokens[2]} {tokens[3]} {tokens[4]}")
+
+            if len(author_candidate) == 1 and len(author_candidate[0].split()) == 4:
+                result.append(
+                    {
+                        "person": author_candidate[0],
+                        "quote": quote_text,
+                        "match_case": 1,
+                    }
+                )
+                already_matched_quotes_indices.add(quote_index)
+                continue
+
+         # get max length of 3 name_surname combo if possible | ex: კიმ ჩენ ინი
+        if len(tokens) >= 4:
+            author_candidate = extract_persons(f"{tokens[1]} {tokens[2]} {tokens[3]}")
+
+            if len(author_candidate) == 1 and len(author_candidate[0].split()) == 3:
+                result.append(
+                    {
+                        "person": author_candidate[0],
+                        "quote": quote_text,
+                        "match_case": 1,
+                    }
+                )
+                already_matched_quotes_indices.add(quote_index)
+                continue
+
+        # get max length of 2 name_surname combo if possible | ex: შარლ მიშელი
         author_candidate = extract_persons(f"{tokens[1]} {tokens[2]}")
 
         if author_candidate:
@@ -368,14 +401,57 @@ def get_quotes(text, v=0):
             continue
 
         prev_text = parts_splitted_by_quote_chars[quote_index - 1]
-
+    
         if not prev_text.strip().endswith(":"):
             continue
 
-        here_should_be_person_mentioned = " ".join(_tokenize_text(prev_text)[-2:])
+        _tokenized_prev_text = _tokenize_text(prev_text)
+
+        if len(_tokenized_prev_text) < 2:
+            continue
+        
+        # get max length of 4 name_surname combo if possible | ex: ურსულა ფონ დერ ლაიენი
+        if len(_tokenized_prev_text) >= 4:
+            here_should_be_person_mentioned = " ".join(_tokenized_prev_text[-4:])
+
+            author_candidate = extract_persons(here_should_be_person_mentioned)
+
+            if len(author_candidate) == 1 and len(author_candidate[0].split()) == 4:
+                result.append(
+                    {
+                        "person": author_candidate[0],
+                        "quote": quote_text,
+                        "match_case": 2,
+                    }
+                )
+                already_matched_quotes_indices.add(quote_index)
+                continue
+
+        
+        # get max length of 3 name_surname combo if possible | ex: კიმ ჩენ ინი
+        if len(_tokenized_prev_text) >= 3:
+            here_should_be_person_mentioned = " ".join(_tokenized_prev_text[-3:])
+
+            author_candidate = extract_persons(here_should_be_person_mentioned)
+
+            if len(author_candidate) == 1 and len(author_candidate[0].split()) == 3:
+                result.append(
+                    {
+                        "person": author_candidate[0],
+                        "quote": quote_text,
+                        "match_case": 2,
+                    }
+                )
+                already_matched_quotes_indices.add(quote_index)
+                continue
+        
+
+        # get max length of 2 name_surname combo if possible | ex: გიორგი გიორგაძე
+        here_should_be_person_mentioned = " ".join(_tokenized_prev_text[-2:])
 
         author_candidate = extract_persons(here_should_be_person_mentioned)
 
+        print(f'{author_candidate=}')
         if author_candidate:
             result.append(
                 {
@@ -396,10 +472,10 @@ def get_quotes(text, v=0):
     """
     if len(extracted_persons) > 0:
 
-        extracted_surames_counter = Counter([i.split()[-1] for i in extracted_persons])
+        extracted_surnames_counter = Counter([i.split()[-1] for i in extracted_persons])
 
         if v:
-            print(f"{extracted_surames_counter=}, {quote_indices_and_texts=}")
+            print(f"{extracted_surnames_counter=}, {quote_indices_and_texts=}")
 
         for quote_index, quote_text in quote_indices_and_texts.items():
 
@@ -416,7 +492,7 @@ def get_quotes(text, v=0):
 
             possible_surname = _get_normalized_surname_if_surname(tokens[1])
 
-            if possible_surname and extracted_surames_counter[possible_surname] == 1:
+            if possible_surname and extracted_surnames_counter[possible_surname] == 1:
                 person = [
                     i for i in extracted_persons if i.split()[-1] == possible_surname
                 ][0]
