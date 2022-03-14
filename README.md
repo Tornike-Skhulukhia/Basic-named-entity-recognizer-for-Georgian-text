@@ -174,10 +174,11 @@ output:
     ]
 ```
 
-# error to add in readme case - " მერი ვიტალი კლიჩკო, მერი კახა კალაძე :-( "
-# error to add in readme case - "  ... განადხადა გიორგი გიორგაძის დამ :-( "
+# other known errors/bugs to be aware of
 
-Here result is shorter than it should be.
+" მერი ვიტალი კლიჩკო, მერი კახა კალაძე :-( "
+"  ... განაცხადა გიორგი გიორგაძის დამ :-( "
+
 
 # Plans/Todos
 We may decide to fix problems like that in the future with or without ML-based approaches.
