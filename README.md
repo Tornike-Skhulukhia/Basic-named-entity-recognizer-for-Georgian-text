@@ -174,10 +174,10 @@ output:
     ]
 ```
 
-# other known errors/bugs to be aware of
+# Other known errors/bugs to be aware of
 
-" მერი ვიტალი კლიჩკო, მერი კახა კალაძე :-( "
-"  ... განაცხადა გიორგი გიორგაძის დამ :-( "
+### " მერი ვიტალი კლიჩკო, მერი კახა კალაძე :-( " - in both of these cases, full 3-word matches will be found incorrectly(მერი in Georgian can be the name of person, as well as Mayor of a city for example, so according to our simple matching logic, it is possible person to have name like მერი კახა კალაძე )
+### " 'გამარჯობა' განაცხადა გიორგი გიორგაძის დამ :-( " - here person "გიორგი გიორგაძე" is identified as author of a quote, but this is not correct
 
 
 # Plans/Todos
