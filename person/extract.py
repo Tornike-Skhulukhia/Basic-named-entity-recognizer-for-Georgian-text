@@ -3,14 +3,26 @@ import string
 from . import NAMES, SURNAMES
 from .util import normalize_surname
 
+CHARACTERS_THAT_CAN_BE_USED_TO_JOIN_MULTI_NAME_HAVING_NAME_SURNAMES = [
+    "-", "—", "(", ")"   # ( ) ex: :ირაკლი (დაჩი) ბერაია
+]
 
 def _normalize_text(text):
 
     # benchmark/test performance later using this and new text creation and other approaches...
 
+    
+    for i in CHARACTERS_THAT_CAN_BE_USED_TO_JOIN_MULTI_NAME_HAVING_NAME_SURNAMES:
+        # these symbols are concatinating possible one name-surnames ex: ლაშა-გიორგი გიორგაძე
+        # so we should replace them with space
+        text = text.replace(i, " ")
+
     # replace punctuation signs with spaces
     for i in string.punctuation:
-        text = text.replace(i, " ")
+        if i not in CHARACTERS_THAT_CAN_BE_USED_TO_JOIN_MULTI_NAME_HAVING_NAME_SURNAMES:
+            # but all others should remain, but separated from words so that
+            # we can still identify after space-splitting if word is name/surname or not 
+            text = text.replace(i, f" {i} ")
 
     # replace multiple spaces with just 1
     text = " ".join(text.split())

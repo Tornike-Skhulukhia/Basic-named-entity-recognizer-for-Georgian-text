@@ -296,6 +296,7 @@ def test_10():
         "ვიქტორ ჯაფარიძე",
     ]
 
+
     assert sorted(answer) == extract_persons(text)
 
 
@@ -350,8 +351,8 @@ def test_15_1():
 
 
 def test_16():
-    text = "გიორგი (დავით) გვარამია იყო და არა იყო რა"
-    answer = ["გიორგი დავით გვარამია"]
+    text = "გიორგი (დავით-ერეკლე) გვარამია იყო და არა იყო რა"
+    answer = ["გიორგი დავით ერეკლე გვარამია"]
 
     assert sorted(answer) == extract_persons(text)
 
@@ -368,3 +369,17 @@ def test_18():
     answer = ["მარიო დრაგი", "რეჯეფ თაიფ ერდოღანი"]
 
     assert sorted(answer) == extract_persons(text)
+
+def test_19():
+    text = """
+    რაღაცას აღნიშნავს მარიამი. 
+    გიორგი გიორგაძე იყო და არა იყო რა.
+
+    რაღაცას აღნიშნავს ნინო? 
+    დავითი დავითაშვილი, იყო და არა იყო რა.
+    
+    """
+    answer = ["გიორგი გიორგაძე", "დავითი დავითაშვილი"]
+
+    assert sorted(answer) == extract_persons(text)
+
