@@ -1,17 +1,17 @@
 """
 Todo:
     add most accurate new match_case, which
-    will match only when we have possible quote-ending-phrase followed with 
+    will match only when we have possible quote-ending-phrase followed with
     name_surname in base form "სახელობითი ბრუნვა", or
     in second form, which indicates that this text is said/written
-    by that person. 
+    by that person.
 """
 
 """
 Todo:
     add case that matches these:
-        
-        "მოგიწოდებთ, მიმართეთ ნორვეგიის ნობელის კომიტეტს, 
+
+        "მოგიწოდებთ, მიმართეთ ნორვეგიის ნობელის კომიტეტს,
           განიხილოს წინადადება ვლადიმერ ზელენსკისთვის მშვიდობის დარგში ნობელის პრემიის მინიჭების თაობაზე!",
         - ამის შესახებ "მთავარი არხის" გენერალური დირექტორი ნიკა გვარამია წერს.
 """
@@ -55,6 +55,7 @@ QUOTE_ENDING_PHRASES = {
     "ნათქვამია",
     "თქვა",
     "მითხრა",
+    "უთხრა",
     "წერს",
     "მწერს",
     "ვკითხულობთ",
@@ -326,9 +327,9 @@ def get_quotes(text, v=0):
     ####################################################
 
     """
-        case 1 
-        
-        ex: 
+        case 1
+
+        ex:
             "ტესტი", - განაცხადა გიორგი გიორგაძემ
     """
     for quote_index, quote_text in quote_indices_and_texts.items():
@@ -344,7 +345,7 @@ def get_quotes(text, v=0):
         if len(tokens) < 3 or tokens[0] not in QUOTE_ENDING_PHRASES:
             continue
 
-        
+
         # get max length of 4 name_surname combo if possible | ex: ურსულა ფონ დერ ლაიენი
         if len(tokens) >= 5:
             author_candidate = extract_persons(f"{tokens[1]} {tokens[2]} {tokens[3]} {tokens[4]}")
@@ -400,7 +401,7 @@ def get_quotes(text, v=0):
             continue
 
         prev_text = parts_splitted_by_quote_chars[quote_index - 1]
-    
+
         if not prev_text.strip().endswith(":"):
             continue
 
@@ -408,7 +409,7 @@ def get_quotes(text, v=0):
 
         if len(_tokenized_prev_text) < 2:
             continue
-        
+
         # get max length of 4 name_surname combo if possible | ex: ურსულა ფონ დერ ლაიენი
         if len(_tokenized_prev_text) >= 4:
             here_should_be_person_mentioned = " ".join(_tokenized_prev_text[-4:])
@@ -426,7 +427,7 @@ def get_quotes(text, v=0):
                 already_matched_quotes_indices.add(quote_index)
                 continue
 
-        
+
         # get max length of 3 name_surname combo if possible | ex: კიმ ჩენ ინი
         if len(_tokenized_prev_text) >= 3:
             here_should_be_person_mentioned = " ".join(_tokenized_prev_text[-3:])
@@ -443,7 +444,7 @@ def get_quotes(text, v=0):
                 )
                 already_matched_quotes_indices.add(quote_index)
                 continue
-        
+
 
         # get max length of 2 name_surname combo if possible | ex: გიორგი გიორგაძე
         here_should_be_person_mentioned = " ".join(_tokenized_prev_text[-2:])
@@ -462,7 +463,7 @@ def get_quotes(text, v=0):
 
     """
     case 3
-    
+
     ex:
         გიორგი გიორგაძე დღეს ილაპარაკებს.
         "ვილაპარაკე", განაცხადა გიორგაძემ ჟურნალისტებთან.
