@@ -9,7 +9,7 @@
 
 BOT_NAME = "Hi"
 
-SPIDER_MODULES = ["transparency.spiders"]
+SPIDER_MODULES = ["transparency.spiders", "transparency.spiders.parliamentarians"]
 NEWSPIDER_MODULE = "transparency.spiders"
 
 

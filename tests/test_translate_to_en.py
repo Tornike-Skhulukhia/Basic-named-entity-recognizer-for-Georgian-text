@@ -13,7 +13,6 @@ def test_2():
 def test_3():
     assert translate_to_en("დავით") == "David"
 
-
 def test_4():
     assert translate_to_en("ჯიმშერ") == "Jimsher"
 
@@ -79,3 +78,32 @@ def test_18():
 
 def test_19():
     assert translate_to_en("ნინო ქათამაძე") == "Nino Katamadze"
+
+# not direct translations
+def test_20():
+    assert translate_to_en('ალექსანდრე') == 'Alexander'
+
+
+def test_21():
+    assert translate_to_en('მარქსი') == 'Marx'
+
+def test_22():
+    assert translate_to_en('სერგეი') == 'Sergey'
+
+def test_22():
+    assert translate_to_en('სერგეი') == 'Sergey'
+
+def test_23():
+    assert translate_to_en('ბაიდენი') == 'Biden'
+
+def test_23():
+    assert translate_to_en('ნოვაკი') == 'Novak'
+
+def test_24():
+    assert translate_to_en('ნიკა') == 'Nika'
+
+
+def test_25():
+    assert translate_to_en('იაკობ ქაჯაია') == 'Iakob Kajaia'
+
+

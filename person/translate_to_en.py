@@ -37,10 +37,30 @@ INFO = {
     "ჰ": "h",
 }
 
-EXCEPTIONS = {
+FULL_WORD_EXCEPTIONS = {
     # what it is & what it should be because of exception
     "davit": "david",
+    "alexandre": "alexander",
+    # until finding pattern
+    "stefanchuk": "stefancuk" 
 }
+
+# ex:  მარქსი -> marx, ალექსი -> alex 
+EXCEPTION_LETTERS = {
+    "ksi": "x",
+    "ks": "x",
+    "ai": "i",
+}
+
+# ex: Sergei --> Sergey
+EXCEPTION_WORD_ENDING_REPLACEMENTS = {
+    "ei": "ey",
+    "eni": "en",
+    "ki": "k",
+} 
+
+# TODO-> add ending fixers - like ბაიდენ-ი (remove last letter) 
+# and replace two letter combos with one where makes sense - like b-ai-deni - b-i-den
 
 
 def translate_to_en(text):
@@ -76,10 +96,17 @@ def translate_to_en(text):
     result = "".join(result)
 
     # handle exceptions
-    for resulted, but_must_be in EXCEPTIONS.items():
+    # parts of words
+    for resulted, but_must_be in EXCEPTION_LETTERS.items():
+        result = result = result.replace(resulted, but_must_be)
+
+    # full words
+    for resulted, but_must_be in FULL_WORD_EXCEPTIONS.items():
         result = re.sub(fr"{resulted}\b", but_must_be, result)
 
-    # maybe implement basic rules to solve "ბაიდენი" --> "Baideni" like issues
+    # word ends
+    for resulted, but_must_be in EXCEPTION_WORD_ENDING_REPLACEMENTS.items():
+        result = re.sub(fr"{resulted}\b", but_must_be, result)
 
     result = result.title()
 
