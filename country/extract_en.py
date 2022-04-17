@@ -26,7 +26,7 @@ MATCH_ONLY_IF_UPPERCASED_IN_SOURCE_TEXT = {
 }
 
 
-def get_countries(original_text):
+def get_countries_en(original_text):
     """
     Get countries from English text as a list of ISO 3166-s 2 letter codes sorted in ascending order.
 

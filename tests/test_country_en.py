@@ -1,8 +1,5 @@
-from ast import Assert
-
 import pytest
-from country.extract_en import get_countries
-from country.get_meta import get_country_meta_info_with_iso2_code
+from country.extract_en import get_countries_en
 
 
 @pytest.mark.parametrize(
@@ -51,8 +48,8 @@ from country.get_meta import get_country_meta_info_with_iso2_code
         ),
     ],
 )
-def test_get_countries(text, expected):
+def test_get_countries_en(text, expected):
     expected = sorted(expected)
-    result = get_countries(text)
+    result = get_countries_en(text)
 
     assert result == expected

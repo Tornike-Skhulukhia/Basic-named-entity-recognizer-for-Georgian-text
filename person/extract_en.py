@@ -3,7 +3,7 @@ import spacy
 NLP = spacy.load("en_core_web_sm")
 
 
-def get_persons(text):
+def get_persons_en(text):
     """
     Return sorted list of unique identified person name_surnames, sorted in ascending order,
     using spacy.

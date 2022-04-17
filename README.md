@@ -115,6 +115,20 @@ print(m)
 }
 ```
 
+# Even though library mainly focuses on Georgian text, it has basic functionality for persons and countries extractions to work with English text as well, but implementation is much simpler and unoptimized compared to Georgian. Please see their function definitions before using them (they are small)
+```python
+from nerge import get_persons_en, get_countries_en
+
+# function uses spacy to get persons
+persons = get_persons_en("""French President Emmanuel Macron held a new 90-minute phone call with Russian counterpart Vladimir Putin today""")
+print(persons) # ["Emmanuel Macron", "Vladimir Putin"]
+
+# use custom manually written rules to find matches | performance may be optimized later
+countries = get_countries_en("""US Senate votes to end normal trade ties with Russia """)
+print(countries) # ["RU", "US"]
+
+```
+
 
 
 
@@ -194,4 +208,3 @@ output:
 
 # Plans/Todos
 We may decide to fix problems like that in the future with or without ML-based approaches.
-

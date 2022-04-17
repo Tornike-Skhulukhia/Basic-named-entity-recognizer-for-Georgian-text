@@ -1,5 +1,5 @@
 import pytest
-from person.extract_en import get_persons
+from person.extract_en import get_persons_en
 
 
 @pytest.mark.parametrize(
@@ -26,10 +26,12 @@ from person.extract_en import get_persons
         (
             "Local media ynet.co.il spreads information about it.",
             [],
-        )
+        ),
+        (
+            """French President Emmanuel Macron held a new 90-minute phone call with Russian counterpart Vladimir Putin today""",
+            ["Emmanuel Macron", "Vladimir Putin"],
+        ),
     ],
 )
-def test_get_persons(text, expected):
-    assert get_persons(text) == sorted(expected)
-
-
+def test_get_persons_en(text, expected):
+    assert get_persons_en(text) == sorted(expected)
