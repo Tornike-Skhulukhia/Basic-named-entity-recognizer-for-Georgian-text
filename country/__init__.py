@@ -1194,7 +1194,7 @@ COUNTRIES_EXTRACT_INFO = [
     #     "word_should_start": [],
     # },
     {
-        "iso_country_name": "Western Sahara*",
+        "iso_country_name": "Western Sahara",
         "country_code": "EH",
         "word_should_start": ["დასავლეთ საჰარ", "დასავლეთ საჰარ"],
     },

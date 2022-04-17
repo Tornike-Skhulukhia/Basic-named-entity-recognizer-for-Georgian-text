@@ -116,8 +116,20 @@ print(m)
 ```
 
 
+
+
 # supported python versions
 Developed on version 3.8, should work on 3.6+
+
+# requirements / installation instructions
+if using for Georgian text only, no library is required (Only pytest to run tests),
+for English text functions, spacy is required for person extractions:
+
+```python
+python3 -m pip install spacy
+```
+
+
 
 # limitations to be aware of
 
