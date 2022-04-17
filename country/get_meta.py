@@ -213,7 +213,7 @@ DATA = {
         "name_ge": "ბონერი, სინტ ევსტათიუსი და საბა",
         "alpha_3_code": "BES",
         "numeric_code": 535,
-        "flag": None,
+        "flag": "🇧🇶",
     },
     "BA": {
         "official_name": "Bosnia and Herzegovina",
@@ -781,7 +781,7 @@ DATA = {
         "name_ge": "წმიდა საყდარი",
         "alpha_3_code": "VAT",
         "numeric_code": 336,
-        "flag": None,
+        "flag": "🇻🇦",
     },
     "HN": {
         "official_name": "Honduras",
