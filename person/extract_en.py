@@ -5,7 +5,11 @@ import spacy
 
 from .stop_words_en import INCORRECT_PERSON_LIKE_WORDS_FOR_SPACY
 
-NLP = spacy.load("en_core_web_sm")
+NLP = spacy.load(
+    "en_core_web_sm",
+    disable=["tok2vec", "tagger", "parser", "attribute_ruler", "lemmatizer"],
+)
+
 
 
 def _preprocess_text(text):
