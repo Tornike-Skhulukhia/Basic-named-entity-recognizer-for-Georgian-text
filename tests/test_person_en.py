@@ -67,6 +67,10 @@ from person.extract_en import get_persons_en
             """Mikheil Saakashvili's court trial will be held today""",
             ["Mikheil Saakashvili"],
         ),
+        (
+            """He will have 2 prisoners at the same time, whom he cannot tolerate”, - wrote Paata Burchuladze’s.""",
+            ["Paata Burchuladze"],
+        ),
     ],
 )
 def test_get_persons_en(text, expected):

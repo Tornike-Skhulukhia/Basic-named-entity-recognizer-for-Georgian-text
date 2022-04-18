@@ -37,9 +37,10 @@ QUOTE_LIKE_CHARS = [
     "“",  # quote start sign
     "„",  # quote end sign
     "’’",  # WTF (What the function :) ?
+    "’",  # WTF (What the function :) ?
     "”",  # from other site
     '"',  # other double quote
-    ",,", # other weirdness yohoo,
+    ",,",  # other weirdness yohoo,
 ]
 
 # because of quote in quotes replacement
@@ -321,8 +322,8 @@ def get_quotes(text, v=0):
     extracted_persons = extract_persons(text_to_extract_persons_from)
 
     if v:
-        print(f'{text=}')
-        print(f'{parts_splitted_by_quote_chars=}')
+        print(f"{text=}")
+        print(f"{parts_splitted_by_quote_chars=}")
         print(f"{extracted_persons=}")
     ####################################################
 
@@ -345,10 +346,11 @@ def get_quotes(text, v=0):
         if len(tokens) < 3 or tokens[0] not in QUOTE_ENDING_PHRASES:
             continue
 
-
         # get max length of 4 name_surname combo if possible | ex: ურსულა ფონ დერ ლაიენი
         if len(tokens) >= 5:
-            author_candidate = extract_persons(f"{tokens[1]} {tokens[2]} {tokens[3]} {tokens[4]}")
+            author_candidate = extract_persons(
+                f"{tokens[1]} {tokens[2]} {tokens[3]} {tokens[4]}"
+            )
 
             if len(author_candidate) == 1 and len(author_candidate[0].split()) == 4:
                 result.append(
@@ -361,7 +363,7 @@ def get_quotes(text, v=0):
                 already_matched_quotes_indices.add(quote_index)
                 continue
 
-         # get max length of 3 name_surname combo if possible | ex: კიმ ჩენ ინი
+        # get max length of 3 name_surname combo if possible | ex: კიმ ჩენ ინი
         if len(tokens) >= 4:
             author_candidate = extract_persons(f"{tokens[1]} {tokens[2]} {tokens[3]}")
 
@@ -427,7 +429,6 @@ def get_quotes(text, v=0):
                 already_matched_quotes_indices.add(quote_index)
                 continue
 
-
         # get max length of 3 name_surname combo if possible | ex: კიმ ჩენ ინი
         if len(_tokenized_prev_text) >= 3:
             here_should_be_person_mentioned = " ".join(_tokenized_prev_text[-3:])
@@ -444,7 +445,6 @@ def get_quotes(text, v=0):
                 )
                 already_matched_quotes_indices.add(quote_index)
                 continue
-
 
         # get max length of 2 name_surname combo if possible | ex: გიორგი გიორგაძე
         here_should_be_person_mentioned = " ".join(_tokenized_prev_text[-2:])
@@ -509,4 +509,3 @@ def get_quotes(text, v=0):
     result = _deduplicate_result(result)
 
     return result
-

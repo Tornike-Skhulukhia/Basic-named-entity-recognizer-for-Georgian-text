@@ -3,12 +3,15 @@ import string
 
 import spacy
 
+from .get_quotes import QUOTE_LIKE_CHARS
 from .stop_words_en import INCORRECT_PERSON_LIKE_WORDS_FOR_SPACY
 
 NLP = spacy.load(
     "en_core_web_sm",
     disable=["tok2vec", "tagger", "parser", "attribute_ruler", "lemmatizer"],
 )
+
+PUNCTUATION_MARKS = set(string.punctuation).union(set(QUOTE_LIKE_CHARS))
 
 
 def _preprocess_text(text):
@@ -24,7 +27,7 @@ def _preprocess_text(text):
     text = re.sub(r"[0-9]", " ", text)
 
     # this way, cpacy identifies more names
-    for old_char in string.punctuation:
+    for old_char in PUNCTUATION_MARKS:
         if old_char == ".":
             new_char = " . "
         else:
@@ -46,6 +49,10 @@ def _text_seems_person(text):
     # min words num check
     spaces_num = text.count(" ")
 
+    # without this check, if sentence has person surname only and then name & surname, we will get
+    # two items, one for person name and one for name_surname
+    # this simple check should be good enough in most cases
+    # otherwise add deduplication logic
     if spaces_num == 0:
         return False
 
@@ -66,6 +73,8 @@ def get_persons_en(text):
     It seems to heavily depend on just capitalization of words, so
     there may be lots of false positives.
     """
+    # breakpoint()
+
     text = _preprocess_text(text)
 
     doc = NLP(text)
@@ -73,10 +82,6 @@ def get_persons_en(text):
     persons = set()
 
     for ent in doc.ents:
-        # without this check, if sentence has person surname only and then name & surname, we will get
-        # two items, one for person name and one for name_surname
-        # this simple check should be good enough in most cases
-        # otherwise add deduplication logic
         if ent.label_ == "PERSON":
             persons.add(ent.text)
 
