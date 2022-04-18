@@ -11,7 +11,6 @@ NLP = spacy.load(
 )
 
 
-
 def _preprocess_text(text):
     # remove incorrectly label-causing words
     text = re.sub(
@@ -83,5 +82,8 @@ def get_persons_en(text):
 
     # remove incorrect matches - they are a lot
     persons = {i for i in persons if _text_seems_person(i)}
+
+    # capitalize each word first letter only
+    persons = {i.title() for i in persons}
 
     return sorted(persons)  # list
