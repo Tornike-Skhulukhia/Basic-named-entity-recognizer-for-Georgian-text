@@ -11,7 +11,7 @@ NLP = spacy.load(
     disable=["tok2vec", "tagger", "parser", "attribute_ruler", "lemmatizer"],
 )
 
-PUNCTUATION_MARKS = set(string.punctuation).union(set(QUOTE_LIKE_CHARS))
+PUNCTUATION_MARKS = set(string.punctuation).union(set(QUOTE_LIKE_CHARS)).union({"–"})
 
 
 def _preprocess_text(text):
