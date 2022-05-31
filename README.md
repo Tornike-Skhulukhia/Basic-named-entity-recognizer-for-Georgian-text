@@ -5,7 +5,7 @@ For better idea how accurate these extractions are, please see files in tests di
 Currently the library uses just pattern-matching, not any language semantics or other similar logic.
 
 # CI
-![tests](https://github.com/github/docs/actions/workflows/tests.yml/badge.svg)
+![tests](https://github.com/Tornike-Skhulukhia/nerge/actions/workflows/tests/badge.svg)
 
 # Person extraction examples
 
