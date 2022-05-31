@@ -4,6 +4,9 @@ Currently supported extractions are for countries and persons + basic person quo
 For better idea how accurate these extractions are, please see files in tests directory and do your own testing.
 Currently the library uses just pattern-matching, not any language semantics or other similar logic.
 
+# CI
+![tests](https://github.com/github/docs/actions/workflows/tests.yml/badge.svg)
+
 # Person extraction examples
 
 ### get persons
