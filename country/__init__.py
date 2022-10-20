@@ -842,7 +842,7 @@ COUNTRIES_EXTRACT_INFO = [
     {
         "iso_country_name": "Philippines (the)",
         "country_code": "PH",
-        "word_should_start": ["ფილიპინებ"],
+        "word_should_start": ["ფილიპინე"],
     },
     # {
     #     "iso_country_name": "Pitcairn",
@@ -1082,7 +1082,6 @@ COUNTRIES_EXTRACT_INFO = [
             "ტოგოელი",
             "ტოგოელ",
             "ტოგოელმა",
-        
         ],
     },
     # {
@@ -1218,6 +1217,4 @@ COUNTRIES_EXTRACT_INFO = [
 
 # add helper to make later steps faster
 for i in COUNTRIES_EXTRACT_INFO:
-    i["_word_should_start_spaces_nums"] = [
-        j.count(" ") for j in i.get("word_should_start", [])
-    ]
+    i["_word_should_start_spaces_nums"] = [j.count(" ") for j in i.get("word_should_start", [])]
