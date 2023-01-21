@@ -438,8 +438,6 @@ def get_quotes(text, v=0):
                 len(author_candidate) == 1
                 and len(author_candidate[0].split()) == 4
             ):
-                # if "მბაპე" in text:
-                #     breakpoint()
 
                 result.append(
                     {
