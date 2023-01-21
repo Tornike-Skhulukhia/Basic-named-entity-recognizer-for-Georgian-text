@@ -1,2 +1,2 @@
-spacy
+spacy==3.4.0
 pytest
