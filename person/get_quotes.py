@@ -431,7 +431,7 @@ def get_quotes(text, v=0):
 
             author_candidate = extract_persons(here_should_be_person_mentioned)
             raw_part_author_candidates = extract_persons(
-                prev_text, sequence_matters=True
+                prev_text, dont_deduplicate_or_sort_result=True
             )
 
             if (
@@ -457,7 +457,7 @@ def get_quotes(text, v=0):
 
             author_candidate = extract_persons(here_should_be_person_mentioned)
             raw_part_author_candidates = extract_persons(
-                prev_text, sequence_matters=True
+                prev_text, dont_deduplicate_or_sort_result=True
             )
 
             if (

@@ -46,7 +46,7 @@ def word_seems_surname(word):
     return word in SURNAMES
 
 
-def extract_persons(text, sequence_matters=False):
+def extract_persons(text, dont_deduplicate_or_sort_result=False):
     """
     Get text and return list of person name & surnames strings that was
     identified sorted in ascending order.
@@ -63,7 +63,7 @@ def extract_persons(text, sequence_matters=False):
     in this case, we assume first 3 word from full name_surname are names, and last is surname
     which is possible to change form in a sentence.
 
-    set sequence_matters argument to True to get listing of persons as they mentioned in text.
+    set dont_deduplicate_or_sort_result argument to True to get listing of persons as they mentioned in text.
     """
 
     text = _normalize_text(text)
@@ -126,7 +126,7 @@ def extract_persons(text, sequence_matters=False):
                 result.append(f"{curr_word} {normalized_possible_surname}")
                 skip_indexes.update([i, i + 1])
 
-    if not sequence_matters:
+    if not dont_deduplicate_or_sort_result:
         result = sorted(set(result))
 
     return result
