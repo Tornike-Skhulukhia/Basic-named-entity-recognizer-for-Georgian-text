@@ -897,7 +897,7 @@ DATA = {
         "alpha_2_code": "GE",
         "alpha_3_code": "GEO",
         "numeric_code": 268,
-        "continent": "Asia",
+        "continent": "Europe",
         "dial_code": "+995",
         "flag": "🇬🇪",
     },
