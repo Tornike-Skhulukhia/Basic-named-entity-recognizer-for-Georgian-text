@@ -296,7 +296,6 @@ def test_10():
         "ვიქტორ ჯაფარიძე",
     ]
 
-
     assert sorted(answer) == extract_persons(text)
 
 
@@ -370,6 +369,7 @@ def test_18():
 
     assert sorted(answer) == extract_persons(text)
 
+
 def test_19():
     text = """
     რაღაცას აღნიშნავს მარიამი. 
@@ -383,3 +383,12 @@ def test_19():
 
     assert sorted(answer) == extract_persons(text)
 
+
+def test20():
+    text = """
+    მრჩეველი, მიხაილო პოდოლიაკი
+    
+    """
+    answer = ["მიხაილო პოდოლიაკი"]
+
+    assert sorted(answer) == extract_persons(text)
