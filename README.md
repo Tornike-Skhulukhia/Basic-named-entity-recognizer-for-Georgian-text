@@ -1,15 +1,18 @@
 # Basic named entity recognizer for Georgian text
+
 Non ML-based approach to extract named entities from Georgian text using Python.
 Currently supported extractions are for countries and persons + basic person quotes extractor functionality.
 For better idea how accurate these extractions are, please see files in tests directory and do your own testing.
 Currently the library uses just pattern-matching, not any language semantics or other similar logic.
 
 # CI
+
 ![tests](https://github.com/Tornike-Skhulukhia/nerge/actions/workflows/tests.yml/badge.svg)
 
 # Person extraction examples
 
 ### get persons
+
 ```python
 from nerge import get_persons
 
@@ -24,6 +27,7 @@ print(p)
 ```
 
 ### get sex from name
+
 ```python
 from nerge import get_sex
 
@@ -36,6 +40,7 @@ print(s)
 ```
 
 ### basic(just letter-based) name/surname translation to English
+
 ```python
 from nerge import translate_to_en
 
@@ -47,11 +52,12 @@ print(t)
 ```
 
 ### get person quotes from texts (not too accurate, but good enough in lots of places)
+
 ```python
 from nerge import get_quotes
 
 text = '''
-"ტესტი", - განაცხადა გიორგი გიორგაძემ    
+"ტესტი", - განაცხადა გიორგი გიორგაძემ
 "PCR ტესტი 70 ლარად გვაქვს" აღნიშნა მარიამ მარიამიძემ
 '''
 
@@ -73,12 +79,10 @@ print(quotes)
 ]
 ```
 
-
-
-
 # Country extraction examples
 
 ### get countries
+
 ```python
 from nerge import get_countries
 
@@ -98,8 +102,8 @@ print(c)
 
 ```
 
-
 ### get meta information about country
+
 ```python
 from nerge import get_country_meta
 
@@ -109,16 +113,20 @@ m = get_country_meta(iso_alpha_2_code)
 print(m)
 # result
 {
-    "official_name": "United States of America (the)",
-    "name_en": "United States of America",
-    "name_ge": "ამერიკის შეერთებული შტატები",
-    "alpha_3_code": "USA",
-    "numeric_code": 840,
-    "flag": "🇺🇸",
-}
+        "official_name": "United States of America (the)",
+        "name_en": "United States of America",
+        "name_ge": "ამერიკის შეერთებული შტატები",
+        "alpha_2_code": "US",
+        "alpha_3_code": "USA",
+        "numeric_code": 840,
+        "continent": "Americas",
+        "dial_code": "+1",
+        "flag": "🇺🇸",
+    }
 ```
 
 # Even though library mainly focuses on Georgian text, it has basic functionality for persons and countries extractions to work with English text as well, but implementation is much simpler and unoptimized compared to Georgian. Please see their function definitions before using them (they are small)
+
 ```python
 from nerge import get_persons_en, get_countries_en
 
@@ -132,13 +140,12 @@ print(countries) # ["RU", "US"]
 
 ```
 
-
-
-
 # supported python versions
+
 Developed on version 3.8, should work on 3.6+
 
 # requirements / installation instructions
+
 if using for Georgian text only, no library is required (Only pytest to run tests),
 for English text functions, spacy is required for person extractions:
 
@@ -146,28 +153,31 @@ for English text functions, spacy is required for person extractions:
 python3 -m pip install spacy
 ```
 
-
-
 # limitations to be aware of
 
 ### get_persons
-names and surnames list in __init__.py files are not written and checked by hand, so 
-in this long lists there may be misplacement. They are fixed when discovered, 
+
+names and surnames list in **init**.py files are not written and checked by hand, so
+in this long lists there may be misplacement. They are fixed when discovered,
 if you see some of them, please make a pull request / let us know about it.
 
 ### get_quotes
+
 This function is just simple pattern matching solution,
 so errors like that may be an issue:
 
 #### 1) Not logical results:
 
 input:
+
 ```python
     '''
-    "PCR ტესტი 70 ლარად?" ვკითხულობთ მარიამ მარიამიძისთვის მიწერილი შეტყობინებიდან  
+    "PCR ტესტი 70 ლარად?" ვკითხულობთ მარიამ მარიამიძისთვის მიწერილი შეტყობინებიდან
     '''
 ```
+
 output:
+
 ```python
     [{'person': 'მარიამ მარიამიძე', 'quote': 'PCR ტესტი 70 ლარად?', 'match_case': 1}]
 ```
@@ -175,24 +185,30 @@ output:
 Here the quote is not from this person, but according to our rules was identified so.
 
 #### 2) Extraction will miss some text/not work if formatting, is not good enough, like missing quotes at some places, or in case of quotes in quotes, between quotes and previous words there are no separation characters, ex:
+
 ```python
     '''
     "111, 222, 333,"444 555" 666 777" - აცხადებს მარიამ მარიამიძე
     '''
 ```
+
 output:
+
 ```python
     [{'person': 'მარიამ მარიამიძე', 'quote': ' 666 777', 'match_case': 1}]
 ```
 
 look how comma and quote are together after 333 (,"), which causes not correct result,
 but if there is a space between, result is correct:
+
 ```python
     '''
     "111, 222, 333, "444 555" 666 777" - აცხადებს მარიამ მარიამიძე
     '''
 ```
+
 output:
+
 ```python
     [
         {
@@ -206,8 +222,9 @@ output:
 # Other known errors/bugs to be aware of
 
 ### " მერი ვიტალი კლიჩკო, მერი კახა კალაძე :-( " - in both of these cases, full 3-word matches will be found incorrectly(მერი in Georgian can be the name of person, as well as Mayor of a city for example, so according to our simple matching logic, it is possible person to have name like მერი კახა კალაძე )
+
 ### " 'გამარჯობა' განაცხადა გიორგი გიორგაძის დამ :-( " - here person "გიორგი გიორგაძე" is identified as author of a quote, but this is not correct
 
-
 # Plans/Todos
+
 We may decide to fix problems like that in the future with or without ML-based approaches.
