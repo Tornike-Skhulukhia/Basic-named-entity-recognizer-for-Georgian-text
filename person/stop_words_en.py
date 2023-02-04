@@ -1,7 +1,7 @@
 try:
-    from ..country.get_meta import DATA as countries_data
+    from ..country.get_meta import COUNTRIES_DATA as countries_data
 except Exception:
-    from country.get_meta import DATA as countries_data
+    from country.get_meta import COUNTRIES_DATA as countries_data
 
 # delete this words before processing, as spacy seems to think they are parts of person name
 INCORRECT_PERSON_LIKE_WORDS_FOR_SPACY = {

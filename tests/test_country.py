@@ -1,5 +1,4 @@
 from country.extract import extract_countries
-from person import extract
 
 
 def test_1():

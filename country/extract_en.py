@@ -1,28 +1,28 @@
-from .get_meta import DATA
+from .get_meta import COUNTRIES_DATA
 
 
 COUNTRY_NAMES_TO_ISO2_CODES = {}
-for iso2_code, info in DATA.items():
-    COUNTRY_NAMES_TO_ISO2_CODES[info['name_en'].lower()] = iso2_code
+for iso2_code, info in COUNTRIES_DATA.items():
+    COUNTRY_NAMES_TO_ISO2_CODES[info["name_en"].lower()] = iso2_code
 
 
 # add some overrides not mentioned yet
-COUNTRY_NAMES_TO_ISO2_CODES.update({
-    # make sure to use lowercase here
-    "britain": "GB",
-    "united kingdom": "GB",
-    "myanmar": "MM",
-    "usa": "US",
-    "u.s.": "US",
-    "u.s": "US",
-    "columbia": "CO",
-
-})
+COUNTRY_NAMES_TO_ISO2_CODES.update(
+    {
+        # make sure to use lowercase here
+        "britain": "GB",
+        "united kingdom": "GB",
+        "myanmar": "MM",
+        "usa": "US",
+        "u.s.": "US",
+        "u.s": "US",
+        "columbia": "CO",
+    }
+)
 
 MATCH_ONLY_IF_UPPERCASED_IN_SOURCE_TEXT = {
     # make sure to use uppercase here
     "US": "US",
-
 }
 
 
@@ -52,8 +52,11 @@ def get_countries_en(original_text):
             result.add(iso2_code)
 
     # exceptions like US
-    for country_name, iso2_code in MATCH_ONLY_IF_UPPERCASED_IN_SOURCE_TEXT.items():
+    for (
+        country_name,
+        iso2_code,
+    ) in MATCH_ONLY_IF_UPPERCASED_IN_SOURCE_TEXT.items():
         if country_name in original_text:
             result.add(iso2_code)
-    
+
     return sorted(result)  # list

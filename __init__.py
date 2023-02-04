@@ -1,8 +1,12 @@
 # country
-from .country.extract import extract_countries as get_countries
+from .country.extract import (
+    extract_countries as get_countries,
+    extract_populated_areas as get_populated_areas
+)
 from .country.extract_en import get_countries_en as get_countries_en
 from .country.get_meta import (
     get_country_meta_info_with_iso2_code as get_country_meta,
+    get_populated_area_meta as get_populated_area_meta,
 )
 
 

@@ -113,19 +113,58 @@ m = get_country_meta(iso_alpha_2_code)
 print(m)
 # result
 {
-        "official_name": "United States of America (the)",
-        "name_en": "United States of America",
-        "name_ge": "ამერიკის შეერთებული შტატები",
-        "alpha_2_code": "US",
-        "alpha_3_code": "USA",
-        "numeric_code": 840,
-        "continent": "Americas",
-        "dial_code": "+1",
-        "flag": "🇺🇸",
-    }
+    "official_name": "United States of America (the)",
+    "name_en": "United States of America",
+    "name_ge": "ამერიკის შეერთებული შტატები",
+    "alpha_2_code": "US",
+    "alpha_3_code": "USA",
+    "numeric_code": 840,
+    "continent_en": "North America",
+    "continent_ge": "ჩრდილოეთ ამერიკა",
+    "dial_code": "+1",
+    "flag": "🇺🇸",
+}
 ```
 
-# Even though library mainly focuses on Georgian text, it has basic functionality for persons and countries extractions to work with English text as well, but implementation is much simpler and unoptimized compared to Georgian. Please see their function definitions before using them (they are small)
+# Populated area extraction examples
+
+### get populated areas
+
+```python
+from nerge import get_populated_areas
+
+text = "საქართველოს ნაკრები ნორვეგიას თბილისის ნაცვლად ბათუმში უმასპინძლებს"
+res = get_populated_areas(text)
+
+print(res)
+# result
+[
+    "ბათუმი",
+    "თბილისი",
+]
+```
+
+### get meta info about populated area
+
+```python
+from nerge import get_populated_area_meta
+
+res = get_populated_area_meta("ბათუმი")
+
+print(res)
+# result
+{
+    'name_ge': 'ბათუმი',
+    'name_en': 'Batumi',
+    'is_region_center': 1,
+    'region_ge': 'აჭარა',
+    'region_en': 'Adjara',
+    'population_in_thousands': 173.7,
+    'coordinates_lat_lon': [41.6168, 41.6367]
+}
+```
+
+# Even though library mainly focuses on Georgian text, it has basic functionality for persons and countries extractions to work with English text as well, but implementation is much simpler and unoptimized compared to Georgian.
 
 ```python
 from nerge import get_persons_en, get_countries_en
