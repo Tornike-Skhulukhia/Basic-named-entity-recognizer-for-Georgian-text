@@ -1,6 +1,7 @@
 # currently supporting georgian people name & surnames, we may add non Georgians later
 
 # rules for names
+import os
 
 """
 Todo:
@@ -12718,6 +12719,7 @@ NAMES = {
     "ფერიცა",
     "ვაიჩ",
     "რამიკო",
+    "ამიკო",
     "ელიარ",
     "აიშეგულ",
     "ნიშან",
@@ -64468,3 +64470,31 @@ for name in _names:
 
     if "-" in name:
         NAMES.remove(name)
+
+
+# if env variable NERGE_ADDITIONAL_PERSON_NAMES_AND_SURNAMES_FILE_PATH with .txt file path
+# is supplied, use this file content as an additional source of new name/surname data
+
+
+_filepath = os.environ.get(
+    "NERGE_ADDITIONAL_PERSON_NAMES_AND_SURNAMES_FILE_PATH"
+)
+
+
+if _filepath and os.path.isfile(_filepath):
+    with open(_filepath, "r") as f:
+        for _line in f:
+            _parts = _line.strip().rsplit(" ")
+            _new_names = _parts[
+                :-1
+            ]  # we may have multiple name in one person name_surname, remember "ურსულა ფონ დერ ლაიენი" (?)
+            _new_surname = [_parts[-1]]
+
+            print(f"{_new_names=}")
+            print(f"{_new_surname=}")
+
+            NAMES.update(_new_names)
+            SURNAMES.update(_new_surname)
+
+    print(f"::::::::::::: {len(NAMES)=}")
+    print(f"::::::::::::: {len(SURNAMES)=}")

@@ -10,6 +10,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+93",
         "flag": "🇦🇫",
+        "coordinates_lat_lon": [34.51666667, 69.183333],
     },
     "AL": {
         "official_name": "Albania",
@@ -22,6 +23,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+355",
         "flag": "🇦🇱",
+        "coordinates_lat_lon": [41.31666667, 19.816667],
     },
     "DZ": {
         "official_name": "Algeria",
@@ -34,6 +36,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+213",
         "flag": "🇩🇿",
+        "coordinates_lat_lon": [36.75, 3.05],
     },
     "AS": {
         "official_name": "American Samoa",
@@ -46,6 +49,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+1684",
         "flag": "🇦🇸",
+        "coordinates_lat_lon": [-14.26666667, -170.7],
     },
     "AD": {
         "official_name": "Andorra",
@@ -58,6 +62,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+376",
         "flag": "🇦🇩",
+        "coordinates_lat_lon": [42.5, 1.516667],
     },
     "AO": {
         "official_name": "Angola",
@@ -70,6 +75,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+244",
         "flag": "🇦🇴",
+        "coordinates_lat_lon": [-8.833333333, 13.216667],
     },
     "AI": {
         "official_name": "Anguilla",
@@ -82,6 +88,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1264",
         "flag": "🇦🇮",
+        "coordinates_lat_lon": [18.21666667, -63.05],
     },
     "AQ": {
         "official_name": "Antarctica",
@@ -94,6 +101,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ანტარქტიდა",
         "dial_code": "+672",
         "flag": "🇦🇶",
+        "coordinates_lat_lon": [0.0, 0.0],
     },
     "AG": {
         "official_name": "Antigua and Barbuda",
@@ -106,6 +114,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1268",
         "flag": "🇦🇬",
+        "coordinates_lat_lon": [17.11666667, -61.85],
     },
     "AR": {
         "official_name": "Argentina",
@@ -118,6 +127,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+54",
         "flag": "🇦🇷",
+        "coordinates_lat_lon": [-34.58333333, -58.666667],
     },
     "AM": {
         "official_name": "Armenia",
@@ -130,6 +140,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+374",
         "flag": "🇦🇲",
+        "coordinates_lat_lon": [40.16666667, 44.5],
     },
     "AW": {
         "official_name": "Aruba",
@@ -142,6 +153,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+297",
         "flag": "🇦🇼",
+        "coordinates_lat_lon": [12.51666667, -70.033333],
     },
     "AU": {
         "official_name": "Australia",
@@ -154,6 +166,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+61",
         "flag": "🇦🇺",
+        "coordinates_lat_lon": [-35.26666667, 149.133333],
     },
     "AT": {
         "official_name": "Austria",
@@ -166,6 +179,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+43",
         "flag": "🇦🇹",
+        "coordinates_lat_lon": [48.2, 16.366667],
     },
     "AZ": {
         "official_name": "Azerbaijan",
@@ -178,6 +192,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+994",
         "flag": "🇦🇿",
+        "coordinates_lat_lon": [40.38333333, 49.866667],
     },
     "BS": {
         "official_name": "Bahamas (the)",
@@ -190,6 +205,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1242",
         "flag": "🇧🇸",
+        "coordinates_lat_lon": [25.08333333, -77.35],
     },
     "BH": {
         "official_name": "Bahrain",
@@ -202,6 +218,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+973",
         "flag": "🇧🇭",
+        "coordinates_lat_lon": [26.23333333, 50.566667],
     },
     "BD": {
         "official_name": "Bangladesh",
@@ -214,6 +231,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+880",
         "flag": "🇧🇩",
+        "coordinates_lat_lon": [23.71666667, 90.4],
     },
     "BB": {
         "official_name": "Barbados",
@@ -226,6 +244,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1246",
         "flag": "🇧🇧",
+        "coordinates_lat_lon": [13.1, -59.616667],
     },
     "BY": {
         "official_name": "Belarus",
@@ -238,6 +257,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+375",
         "flag": "🇧🇾",
+        "coordinates_lat_lon": [53.9, 27.566667],
     },
     "BE": {
         "official_name": "Belgium",
@@ -250,6 +270,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+32",
         "flag": "🇧🇪",
+        "coordinates_lat_lon": [50.83333333, 4.333333],
     },
     "BZ": {
         "official_name": "Belize",
@@ -262,6 +283,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+501",
         "flag": "🇧🇿",
+        "coordinates_lat_lon": [17.25, -88.766667],
     },
     "BJ": {
         "official_name": "Benin",
@@ -274,6 +296,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+229",
         "flag": "🇧🇯",
+        "coordinates_lat_lon": [6.483333333, 2.616667],
     },
     "BM": {
         "official_name": "Bermuda",
@@ -286,6 +309,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+1441",
         "flag": "🇧🇲",
+        "coordinates_lat_lon": [32.28333333, -64.783333],
     },
     "BT": {
         "official_name": "Bhutan",
@@ -298,6 +322,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+975",
         "flag": "🇧🇹",
+        "coordinates_lat_lon": [27.46666667, 89.633333],
     },
     "BO": {
         "official_name": "Bolivia (Plurinational State of)",
@@ -310,6 +335,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+591",
         "flag": "🇧🇴",
+        "coordinates_lat_lon": [-16.5, -68.15],
     },
     "BQ": {
         "official_name": "Bonaire, Sint Eustatius and Saba",
@@ -322,6 +348,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": None,
         "flag": "🇧🇶",
+        "coordinates_lat_lon": [],
     },
     "BA": {
         "official_name": "Bosnia and Herzegovina",
@@ -334,6 +361,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+387",
         "flag": "🇧🇦",
+        "coordinates_lat_lon": [43.86666667, 18.416667],
     },
     "BW": {
         "official_name": "Botswana",
@@ -346,6 +374,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+267",
         "flag": "🇧🇼",
+        "coordinates_lat_lon": [-24.63333333, 25.9],
     },
     "BV": {
         "official_name": "Bouvet Island",
@@ -358,6 +387,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": None,
         "flag": "🇧🇻",
+        "coordinates_lat_lon": [],
     },
     "BR": {
         "official_name": "Brazil",
@@ -370,6 +400,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+55",
         "flag": "🇧🇷",
+        "coordinates_lat_lon": [-15.78333333, -47.916667],
     },
     "IO": {
         "official_name": "British Indian Ocean Territory (the)",
@@ -382,6 +413,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+246",
         "flag": "🇮🇴",
+        "coordinates_lat_lon": [-7.3, 72.4],
     },
     "BN": {
         "official_name": "Brunei Darussalam",
@@ -394,6 +426,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+673",
         "flag": "🇧🇳",
+        "coordinates_lat_lon": [4.883333333, 114.933333],
     },
     "BG": {
         "official_name": "Bulgaria",
@@ -406,6 +439,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+359",
         "flag": "🇧🇬",
+        "coordinates_lat_lon": [42.68333333, 23.316667],
     },
     "BF": {
         "official_name": "Burkina Faso",
@@ -418,6 +452,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+226",
         "flag": "🇧🇫",
+        "coordinates_lat_lon": [12.36666667, -1.516667],
     },
     "BI": {
         "official_name": "Burundi",
@@ -430,6 +465,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+257",
         "flag": "🇧🇮",
+        "coordinates_lat_lon": [-3.366666667, 29.35],
     },
     "CV": {
         "official_name": "Cabo Verde",
@@ -442,6 +478,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+238",
         "flag": "🇨🇻",
+        "coordinates_lat_lon": [14.91666667, -23.516667],
     },
     "KH": {
         "official_name": "Cambodia",
@@ -454,6 +491,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+855",
         "flag": "🇰🇭",
+        "coordinates_lat_lon": [11.55, 104.916667],
     },
     "CM": {
         "official_name": "Cameroon",
@@ -466,6 +504,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+237",
         "flag": "🇨🇲",
+        "coordinates_lat_lon": [3.866666667, 11.516667],
     },
     "CA": {
         "official_name": "Canada",
@@ -478,6 +517,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1",
         "flag": "🇨🇦",
+        "coordinates_lat_lon": [45.41666667, -75.7],
     },
     "KY": {
         "official_name": "Cayman Islands (the)",
@@ -490,6 +530,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+ 345",
         "flag": "🇰🇾",
+        "coordinates_lat_lon": [19.3, -81.383333],
     },
     "CF": {
         "official_name": "Central African Republic (the)",
@@ -502,6 +543,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+236",
         "flag": "🇨🇫",
+        "coordinates_lat_lon": [4.366666667, 18.583333],
     },
     "TD": {
         "official_name": "Chad",
@@ -514,6 +556,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+235",
         "flag": "🇹🇩",
+        "coordinates_lat_lon": [12.1, 15.033333],
     },
     "CL": {
         "official_name": "Chile",
@@ -526,6 +569,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+56",
         "flag": "🇨🇱",
+        "coordinates_lat_lon": [-33.45, -70.666667],
     },
     "CN": {
         "official_name": "China",
@@ -538,6 +582,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+86",
         "flag": "🇨🇳",
+        "coordinates_lat_lon": [39.91666667, 116.383333],
     },
     "CX": {
         "official_name": "Christmas Island",
@@ -550,6 +595,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+61",
         "flag": "🇨🇽",
+        "coordinates_lat_lon": [-10.41666667, 105.716667],
     },
     "CC": {
         "official_name": "Cocos (Keeling) Islands (the)",
@@ -562,6 +608,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+61",
         "flag": "🇨🇨",
+        "coordinates_lat_lon": [-12.16666667, 96.833333],
     },
     "CO": {
         "official_name": "Colombia",
@@ -574,6 +621,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+57",
         "flag": "🇨🇴",
+        "coordinates_lat_lon": [4.6, -74.083333],
     },
     "KM": {
         "official_name": "Comoros (the)",
@@ -586,6 +634,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+269",
         "flag": "🇰🇲",
+        "coordinates_lat_lon": [-11.7, 43.233333],
     },
     "CD": {
         "official_name": "Congo (the Democratic Republic of the)",
@@ -598,6 +647,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+243",
         "flag": "🇨🇩",
+        "coordinates_lat_lon": [-4.316666667, 15.3],
     },
     "CG": {
         "official_name": "Congo (the)",
@@ -610,6 +660,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+242",
         "flag": "🇨🇬",
+        "coordinates_lat_lon": [-4.25, 15.283333],
     },
     "CK": {
         "official_name": "Cook Islands (the)",
@@ -622,6 +673,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+682",
         "flag": "🇨🇰",
+        "coordinates_lat_lon": [-21.2, -159.766667],
     },
     "CR": {
         "official_name": "Costa Rica",
@@ -634,6 +686,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+506",
         "flag": "🇨🇷",
+        "coordinates_lat_lon": [9.933333333, -84.083333],
     },
     "HR": {
         "official_name": "Croatia",
@@ -646,6 +699,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+385",
         "flag": "🇭🇷",
+        "coordinates_lat_lon": [45.8, 16.0],
     },
     "CU": {
         "official_name": "Cuba",
@@ -658,6 +712,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+53",
         "flag": "🇨🇺",
+        "coordinates_lat_lon": [23.11666667, -82.35],
     },
     "CW": {
         "official_name": "Curaçao",
@@ -670,6 +725,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": None,
         "flag": "🇨🇼",
+        "coordinates_lat_lon": [12.1, -68.916667],
     },
     "CY": {
         "official_name": "Cyprus",
@@ -682,6 +738,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+357",
         "flag": "🇨🇾",
+        "coordinates_lat_lon": [35.16666667, 33.366667],
     },
     "CZ": {
         "official_name": "Czechia",
@@ -694,6 +751,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+420",
         "flag": "🇨🇿",
+        "coordinates_lat_lon": [50.08333333, 14.466667],
     },
     "CI": {
         "official_name": "Côte d'Ivoire",
@@ -706,6 +764,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+225",
         "flag": "🇨🇮",
+        "coordinates_lat_lon": [6.816666667, -5.266667],
     },
     "DK": {
         "official_name": "Denmark",
@@ -718,6 +777,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+45",
         "flag": "🇩🇰",
+        "coordinates_lat_lon": [55.66666667, 12.583333],
     },
     "DJ": {
         "official_name": "Djibouti",
@@ -730,6 +790,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+253",
         "flag": "🇩🇯",
+        "coordinates_lat_lon": [11.58333333, 43.15],
     },
     "DM": {
         "official_name": "Dominica",
@@ -742,6 +803,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1767",
         "flag": "🇩🇲",
+        "coordinates_lat_lon": [15.3, -61.4],
     },
     "DO": {
         "official_name": "Dominican Republic (the)",
@@ -754,6 +816,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1849",
         "flag": "🇩🇴",
+        "coordinates_lat_lon": [18.46666667, -69.9],
     },
     "EC": {
         "official_name": "Ecuador",
@@ -766,6 +829,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+593",
         "flag": "🇪🇨",
+        "coordinates_lat_lon": [-0.216666667, -78.5],
     },
     "EG": {
         "official_name": "Egypt",
@@ -778,6 +842,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+20",
         "flag": "🇪🇬",
+        "coordinates_lat_lon": [30.05, 31.25],
     },
     "SV": {
         "official_name": "El Salvador",
@@ -790,6 +855,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+503",
         "flag": "🇸🇻",
+        "coordinates_lat_lon": [13.7, -89.2],
     },
     "GQ": {
         "official_name": "Equatorial Guinea",
@@ -802,6 +868,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+240",
         "flag": "🇬🇶",
+        "coordinates_lat_lon": [3.75, 8.783333],
     },
     "ER": {
         "official_name": "Eritrea",
@@ -814,6 +881,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+291",
         "flag": "🇪🇷",
+        "coordinates_lat_lon": [15.33333333, 38.933333],
     },
     "EE": {
         "official_name": "Estonia",
@@ -826,6 +894,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+372",
         "flag": "🇪🇪",
+        "coordinates_lat_lon": [59.43333333, 24.716667],
     },
     "SZ": {
         "official_name": "Eswatini",
@@ -838,6 +907,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+268",
         "flag": "🇸🇿",
+        "coordinates_lat_lon": [-26.31666667, 31.133333],
     },
     "ET": {
         "official_name": "Ethiopia",
@@ -850,6 +920,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+251",
         "flag": "🇪🇹",
+        "coordinates_lat_lon": [9.033333333, 38.7],
     },
     "FK": {
         "official_name": "Falkland Islands (the) [Malvinas]",
@@ -862,6 +933,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+500",
         "flag": "🇫🇰",
+        "coordinates_lat_lon": [-51.7, -57.85],
     },
     "FO": {
         "official_name": "Faroe Islands (the)",
@@ -874,6 +946,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+298",
         "flag": "🇫🇴",
+        "coordinates_lat_lon": [62.0, -6.766667],
     },
     "FJ": {
         "official_name": "Fiji",
@@ -886,6 +959,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+679",
         "flag": "🇫🇯",
+        "coordinates_lat_lon": [-18.13333333, 178.416667],
     },
     "FI": {
         "official_name": "Finland",
@@ -898,6 +972,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+358",
         "flag": "🇫🇮",
+        "coordinates_lat_lon": [60.16666667, 24.933333],
     },
     "FR": {
         "official_name": "France",
@@ -910,6 +985,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+33",
         "flag": "🇫🇷",
+        "coordinates_lat_lon": [48.86666667, 2.333333],
     },
     "GF": {
         "official_name": "French Guiana",
@@ -922,6 +998,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+594",
         "flag": "🇬🇫",
+        "coordinates_lat_lon": [],
     },
     "PF": {
         "official_name": "French Polynesia",
@@ -934,6 +1011,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+689",
         "flag": "🇵🇫",
+        "coordinates_lat_lon": [-17.53333333, -149.566667],
     },
     "TF": {
         "official_name": "French Southern Territories (the)",
@@ -946,6 +1024,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": None,
         "flag": "🇹🇫",
+        "coordinates_lat_lon": [-49.35, 70.216667],
     },
     "GA": {
         "official_name": "Gabon",
@@ -958,6 +1037,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+241",
         "flag": "🇬🇦",
+        "coordinates_lat_lon": [0.383333333, 9.45],
     },
     "GM": {
         "official_name": "Gambia (the)",
@@ -970,6 +1050,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+220",
         "flag": "🇬🇲",
+        "coordinates_lat_lon": [13.45, -16.566667],
     },
     "GE": {
         "official_name": "Georgia",
@@ -982,6 +1063,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+995",
         "flag": "🇬🇪",
+        "coordinates_lat_lon": [41.68333333, 44.833333],
     },
     "DE": {
         "official_name": "Germany",
@@ -994,6 +1076,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+49",
         "flag": "🇩🇪",
+        "coordinates_lat_lon": [52.51666667, 13.4],
     },
     "GH": {
         "official_name": "Ghana",
@@ -1006,6 +1089,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+233",
         "flag": "🇬🇭",
+        "coordinates_lat_lon": [5.55, -0.216667],
     },
     "GI": {
         "official_name": "Gibraltar",
@@ -1018,6 +1102,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+350",
         "flag": "🇬🇮",
+        "coordinates_lat_lon": [36.13333333, -5.35],
     },
     "GR": {
         "official_name": "Greece",
@@ -1030,6 +1115,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+30",
         "flag": "🇬🇷",
+        "coordinates_lat_lon": [37.98333333, 23.733333],
     },
     "GL": {
         "official_name": "Greenland",
@@ -1042,6 +1128,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+299",
         "flag": "🇬🇱",
+        "coordinates_lat_lon": [64.18333333, -51.75],
     },
     "GD": {
         "official_name": "Grenada",
@@ -1054,6 +1141,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1473",
         "flag": "🇬🇩",
+        "coordinates_lat_lon": [12.05, -61.75],
     },
     "GP": {
         "official_name": "Guadeloupe",
@@ -1066,6 +1154,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+590",
         "flag": "🇬🇵",
+        "coordinates_lat_lon": [],
     },
     "GU": {
         "official_name": "Guam",
@@ -1078,6 +1167,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+1671",
         "flag": "🇬🇺",
+        "coordinates_lat_lon": [13.46666667, 144.733333],
     },
     "GT": {
         "official_name": "Guatemala",
@@ -1090,6 +1180,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+502",
         "flag": "🇬🇹",
+        "coordinates_lat_lon": [14.61666667, -90.516667],
     },
     "GG": {
         "official_name": "Guernsey",
@@ -1102,6 +1193,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+44",
         "flag": "🇬🇬",
+        "coordinates_lat_lon": [49.45, -2.533333],
     },
     "GN": {
         "official_name": "Guinea",
@@ -1114,6 +1206,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+224",
         "flag": "🇬🇳",
+        "coordinates_lat_lon": [9.5, -13.7],
     },
     "GW": {
         "official_name": "Guinea-Bissau",
@@ -1126,6 +1219,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+245",
         "flag": "🇬🇼",
+        "coordinates_lat_lon": [11.85, -15.583333],
     },
     "GY": {
         "official_name": "Guyana",
@@ -1138,6 +1232,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+595",
         "flag": "🇬🇾",
+        "coordinates_lat_lon": [6.8, -58.15],
     },
     "HT": {
         "official_name": "Haiti",
@@ -1150,6 +1245,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+509",
         "flag": "🇭🇹",
+        "coordinates_lat_lon": [18.53333333, -72.333333],
     },
     "HM": {
         "official_name": "Heard Island and McDonald Islands",
@@ -1162,6 +1258,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": None,
         "flag": "🇭🇲",
+        "coordinates_lat_lon": [0.0, 0.0],
     },
     "VA": {
         "official_name": "Holy See (the)",
@@ -1174,6 +1271,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+379",
         "flag": "🇻🇦",
+        "coordinates_lat_lon": [41.9, 12.45],
     },
     "HN": {
         "official_name": "Honduras",
@@ -1186,6 +1284,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+504",
         "flag": "🇭🇳",
+        "coordinates_lat_lon": [14.1, -87.216667],
     },
     "HK": {
         "official_name": "Hong Kong",
@@ -1198,6 +1297,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+852",
         "flag": "🇭🇰",
+        "coordinates_lat_lon": [0.0, 0.0],
     },
     "HU": {
         "official_name": "Hungary",
@@ -1210,6 +1310,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+36",
         "flag": "🇭🇺",
+        "coordinates_lat_lon": [47.5, 19.083333],
     },
     "IS": {
         "official_name": "Iceland",
@@ -1222,6 +1323,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+354",
         "flag": "🇮🇸",
+        "coordinates_lat_lon": [64.15, -21.95],
     },
     "IN": {
         "official_name": "India",
@@ -1234,6 +1336,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+91",
         "flag": "🇮🇳",
+        "coordinates_lat_lon": [28.6, 77.2],
     },
     "ID": {
         "official_name": "Indonesia",
@@ -1246,6 +1349,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+62",
         "flag": "🇮🇩",
+        "coordinates_lat_lon": [-6.166666667, 106.816667],
     },
     "IR": {
         "official_name": "Iran (Islamic Republic of)",
@@ -1258,6 +1362,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+98",
         "flag": "🇮🇷",
+        "coordinates_lat_lon": [35.7, 51.416667],
     },
     "IQ": {
         "official_name": "Iraq",
@@ -1270,6 +1375,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+964",
         "flag": "🇮🇶",
+        "coordinates_lat_lon": [33.33333333, 44.4],
     },
     "IE": {
         "official_name": "Ireland",
@@ -1282,6 +1388,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+353",
         "flag": "🇮🇪",
+        "coordinates_lat_lon": [53.31666667, -6.233333],
     },
     "IM": {
         "official_name": "Isle of Man",
@@ -1294,6 +1401,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+44",
         "flag": "🇮🇲",
+        "coordinates_lat_lon": [54.15, -4.483333],
     },
     "IL": {
         "official_name": "Israel",
@@ -1306,6 +1414,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+972",
         "flag": "🇮🇱",
+        "coordinates_lat_lon": [31.76666667, 35.233333],
     },
     "IT": {
         "official_name": "Italy",
@@ -1318,6 +1427,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+39",
         "flag": "🇮🇹",
+        "coordinates_lat_lon": [41.9, 12.483333],
     },
     "JM": {
         "official_name": "Jamaica",
@@ -1330,6 +1440,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1876",
         "flag": "🇯🇲",
+        "coordinates_lat_lon": [18.0, -76.8],
     },
     "JP": {
         "official_name": "Japan",
@@ -1342,6 +1453,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+81",
         "flag": "🇯🇵",
+        "coordinates_lat_lon": [35.68333333, 139.75],
     },
     "JE": {
         "official_name": "Jersey",
@@ -1354,6 +1466,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+44",
         "flag": "🇯🇪",
+        "coordinates_lat_lon": [49.18333333, -2.1],
     },
     "JO": {
         "official_name": "Jordan",
@@ -1366,6 +1479,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+962",
         "flag": "🇯🇴",
+        "coordinates_lat_lon": [31.95, 35.933333],
     },
     "KZ": {
         "official_name": "Kazakhstan",
@@ -1378,6 +1492,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+77",
         "flag": "🇰🇿",
+        "coordinates_lat_lon": [51.16666667, 71.416667],
     },
     "KE": {
         "official_name": "Kenya",
@@ -1390,6 +1505,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+254",
         "flag": "🇰🇪",
+        "coordinates_lat_lon": [-1.283333333, 36.816667],
     },
     "KI": {
         "official_name": "Kiribati",
@@ -1402,6 +1518,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+686",
         "flag": "🇰🇮",
+        "coordinates_lat_lon": [-0.883333333, 169.533333],
     },
     "KP": {
         "official_name": "Korea (the Democratic People's Republic of)",
@@ -1414,6 +1531,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+850",
         "flag": "🇰🇵",
+        "coordinates_lat_lon": [39.01666667, 125.75],
     },
     "KR": {
         "official_name": "Korea (the Republic of)",
@@ -1426,6 +1544,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+82",
         "flag": "🇰🇷",
+        "coordinates_lat_lon": [37.55, 126.983333],
     },
     "KW": {
         "official_name": "Kuwait",
@@ -1438,6 +1557,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+965",
         "flag": "🇰🇼",
+        "coordinates_lat_lon": [29.36666667, 47.966667],
     },
     "KG": {
         "official_name": "Kyrgyzstan",
@@ -1450,6 +1570,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+996",
         "flag": "🇰🇬",
+        "coordinates_lat_lon": [42.86666667, 74.6],
     },
     "LA": {
         "official_name": "Lao People's Democratic Republic (the)",
@@ -1462,6 +1583,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+856",
         "flag": "🇱🇦",
+        "coordinates_lat_lon": [17.96666667, 102.6],
     },
     "LV": {
         "official_name": "Latvia",
@@ -1474,6 +1596,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+371",
         "flag": "🇱🇻",
+        "coordinates_lat_lon": [56.95, 24.1],
     },
     "LB": {
         "official_name": "Lebanon",
@@ -1486,6 +1609,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+961",
         "flag": "🇱🇧",
+        "coordinates_lat_lon": [33.86666667, 35.5],
     },
     "LS": {
         "official_name": "Lesotho",
@@ -1498,6 +1622,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+266",
         "flag": "🇱🇸",
+        "coordinates_lat_lon": [-29.31666667, 27.483333],
     },
     "LR": {
         "official_name": "Liberia",
@@ -1510,6 +1635,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+231",
         "flag": "🇱🇷",
+        "coordinates_lat_lon": [6.3, -10.8],
     },
     "LY": {
         "official_name": "Libya",
@@ -1522,6 +1648,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+218",
         "flag": "🇱🇾",
+        "coordinates_lat_lon": [32.88333333, 13.166667],
     },
     "LI": {
         "official_name": "Liechtenstein",
@@ -1534,6 +1661,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+423",
         "flag": "🇱🇮",
+        "coordinates_lat_lon": [47.13333333, 9.516667],
     },
     "LT": {
         "official_name": "Lithuania",
@@ -1546,6 +1674,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+370",
         "flag": "🇱🇹",
+        "coordinates_lat_lon": [54.68333333, 25.316667],
     },
     "LU": {
         "official_name": "Luxembourg",
@@ -1558,6 +1687,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+352",
         "flag": "🇱🇺",
+        "coordinates_lat_lon": [49.6, 6.116667],
     },
     "MO": {
         "official_name": "Macao",
@@ -1570,6 +1700,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+853",
         "flag": "🇲🇴",
+        "coordinates_lat_lon": [0.0, 0.0],
     },
     "MG": {
         "official_name": "Madagascar",
@@ -1582,6 +1713,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+261",
         "flag": "🇲🇬",
+        "coordinates_lat_lon": [-18.91666667, 47.516667],
     },
     "MW": {
         "official_name": "Malawi",
@@ -1594,6 +1726,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+265",
         "flag": "🇲🇼",
+        "coordinates_lat_lon": [-13.96666667, 33.783333],
     },
     "MY": {
         "official_name": "Malaysia",
@@ -1606,6 +1739,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+60",
         "flag": "🇲🇾",
+        "coordinates_lat_lon": [3.166666667, 101.7],
     },
     "MV": {
         "official_name": "Maldives",
@@ -1618,6 +1752,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+960",
         "flag": "🇲🇻",
+        "coordinates_lat_lon": [4.166666667, 73.5],
     },
     "ML": {
         "official_name": "Mali",
@@ -1630,6 +1765,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+223",
         "flag": "🇲🇱",
+        "coordinates_lat_lon": [12.65, -8.0],
     },
     "MT": {
         "official_name": "Malta",
@@ -1642,6 +1778,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+356",
         "flag": "🇲🇹",
+        "coordinates_lat_lon": [35.88333333, 14.5],
     },
     "MH": {
         "official_name": "Marshall Islands (the)",
@@ -1654,6 +1791,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+692",
         "flag": "🇲🇭",
+        "coordinates_lat_lon": [7.1, 171.383333],
     },
     "MQ": {
         "official_name": "Martinique",
@@ -1666,6 +1804,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+596",
         "flag": "🇲🇶",
+        "coordinates_lat_lon": [],
     },
     "MR": {
         "official_name": "Mauritania",
@@ -1678,6 +1817,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+222",
         "flag": "🇲🇷",
+        "coordinates_lat_lon": [18.06666667, -15.966667],
     },
     "MU": {
         "official_name": "Mauritius",
@@ -1690,6 +1830,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+230",
         "flag": "🇲🇺",
+        "coordinates_lat_lon": [-20.15, 57.483333],
     },
     "YT": {
         "official_name": "Mayotte",
@@ -1702,6 +1843,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+262",
         "flag": "🇾🇹",
+        "coordinates_lat_lon": [],
     },
     "MX": {
         "official_name": "Mexico",
@@ -1714,6 +1856,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+52",
         "flag": "🇲🇽",
+        "coordinates_lat_lon": [19.43333333, -99.133333],
     },
     "FM": {
         "official_name": "Micronesia (Federated States of)",
@@ -1726,6 +1869,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+691",
         "flag": "🇫🇲",
+        "coordinates_lat_lon": [6.916666667, 158.15],
     },
     "MD": {
         "official_name": "Moldova (the Republic of)",
@@ -1738,6 +1882,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+373",
         "flag": "🇲🇩",
+        "coordinates_lat_lon": [47.0, 28.85],
     },
     "MC": {
         "official_name": "Monaco",
@@ -1750,6 +1895,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+377",
         "flag": "🇲🇨",
+        "coordinates_lat_lon": [43.73333333, 7.416667],
     },
     "MN": {
         "official_name": "Mongolia",
@@ -1762,6 +1908,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+976",
         "flag": "🇲🇳",
+        "coordinates_lat_lon": [47.91666667, 106.916667],
     },
     "ME": {
         "official_name": "Montenegro",
@@ -1774,6 +1921,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+382",
         "flag": "🇲🇪",
+        "coordinates_lat_lon": [42.43333333, 19.266667],
     },
     "MS": {
         "official_name": "Montserrat",
@@ -1786,6 +1934,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1664",
         "flag": "🇲🇸",
+        "coordinates_lat_lon": [16.7, -62.216667],
     },
     "MA": {
         "official_name": "Morocco",
@@ -1798,6 +1947,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+212",
         "flag": "🇲🇦",
+        "coordinates_lat_lon": [34.01666667, -6.816667],
     },
     "MZ": {
         "official_name": "Mozambique",
@@ -1810,6 +1960,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+258",
         "flag": "🇲🇿",
+        "coordinates_lat_lon": [-25.95, 32.583333],
     },
     "MM": {
         "official_name": "Myanmar",
@@ -1822,6 +1973,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+95",
         "flag": "🇲🇲",
+        "coordinates_lat_lon": [16.8, 96.15],
     },
     "NA": {
         "official_name": "Namibia",
@@ -1834,6 +1986,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+264",
         "flag": "🇳🇦",
+        "coordinates_lat_lon": [],
     },
     "NR": {
         "official_name": "Nauru",
@@ -1846,6 +1999,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+674",
         "flag": "🇳🇷",
+        "coordinates_lat_lon": [-0.5477, 166.920867],
     },
     "NP": {
         "official_name": "Nepal",
@@ -1858,6 +2012,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+977",
         "flag": "🇳🇵",
+        "coordinates_lat_lon": [27.71666667, 85.316667],
     },
     "NL": {
         "official_name": "Netherlands (the)",
@@ -1870,6 +2025,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+31",
         "flag": "🇳🇱",
+        "coordinates_lat_lon": [52.35, 4.916667],
     },
     "NC": {
         "official_name": "New Caledonia",
@@ -1882,6 +2038,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+687",
         "flag": "🇳🇨",
+        "coordinates_lat_lon": [-22.26666667, 166.45],
     },
     "NZ": {
         "official_name": "New Zealand",
@@ -1894,6 +2051,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+64",
         "flag": "🇳🇿",
+        "coordinates_lat_lon": [-41.3, 174.783333],
     },
     "NI": {
         "official_name": "Nicaragua",
@@ -1906,6 +2064,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+505",
         "flag": "🇳🇮",
+        "coordinates_lat_lon": [12.13333333, -86.25],
     },
     "NE": {
         "official_name": "Niger (the)",
@@ -1918,6 +2077,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+227",
         "flag": "🇳🇪",
+        "coordinates_lat_lon": [13.51666667, 2.116667],
     },
     "NG": {
         "official_name": "Nigeria",
@@ -1930,6 +2090,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+234",
         "flag": "🇳🇬",
+        "coordinates_lat_lon": [9.083333333, 7.533333],
     },
     "NU": {
         "official_name": "Niue",
@@ -1942,6 +2103,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+683",
         "flag": "🇳🇺",
+        "coordinates_lat_lon": [-19.01666667, -169.916667],
     },
     "NF": {
         "official_name": "Norfolk Island",
@@ -1954,6 +2116,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+672",
         "flag": "🇳🇫",
+        "coordinates_lat_lon": [-29.05, 167.966667],
     },
     "MK": {
         "official_name": "North Macedonia",
@@ -1966,6 +2129,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+389",
         "flag": "🇲🇰",
+        "coordinates_lat_lon": [42.0, 21.433333],
     },
     "MP": {
         "official_name": "Northern Mariana Islands (the)",
@@ -1978,6 +2142,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+1670",
         "flag": "🇲🇵",
+        "coordinates_lat_lon": [15.2, 145.75],
     },
     "NO": {
         "official_name": "Norway",
@@ -1990,6 +2155,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+47",
         "flag": "🇳🇴",
+        "coordinates_lat_lon": [59.91666667, 10.75],
     },
     "OM": {
         "official_name": "Oman",
@@ -2002,6 +2168,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+968",
         "flag": "🇴🇲",
+        "coordinates_lat_lon": [23.61666667, 58.583333],
     },
     "PK": {
         "official_name": "Pakistan",
@@ -2014,6 +2181,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+92",
         "flag": "🇵🇰",
+        "coordinates_lat_lon": [33.68333333, 73.05],
     },
     "PW": {
         "official_name": "Palau",
@@ -2026,6 +2194,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+680",
         "flag": "🇵🇼",
+        "coordinates_lat_lon": [7.483333333, 134.633333],
     },
     "PS": {
         "official_name": "Palestine, State of",
@@ -2038,6 +2207,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+970",
         "flag": "🇵🇸",
+        "coordinates_lat_lon": [31.76666667, 35.233333],
     },
     "PA": {
         "official_name": "Panama",
@@ -2050,6 +2220,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+507",
         "flag": "🇵🇦",
+        "coordinates_lat_lon": [8.966666667, -79.533333],
     },
     "PG": {
         "official_name": "Papua New Guinea",
@@ -2062,6 +2233,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+675",
         "flag": "🇵🇬",
+        "coordinates_lat_lon": [-9.45, 147.183333],
     },
     "PY": {
         "official_name": "Paraguay",
@@ -2074,6 +2246,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+595",
         "flag": "🇵🇾",
+        "coordinates_lat_lon": [-25.26666667, -57.666667],
     },
     "PE": {
         "official_name": "Peru",
@@ -2086,6 +2259,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+51",
         "flag": "🇵🇪",
+        "coordinates_lat_lon": [-12.05, -77.05],
     },
     "PH": {
         "official_name": "Philippines (the)",
@@ -2098,6 +2272,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+63",
         "flag": "🇵🇭",
+        "coordinates_lat_lon": [14.6, 120.966667],
     },
     "PN": {
         "official_name": "Pitcairn",
@@ -2110,6 +2285,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+872",
         "flag": "🇵🇳",
+        "coordinates_lat_lon": [-25.06666667, -130.083333],
     },
     "PL": {
         "official_name": "Poland",
@@ -2122,6 +2298,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+48",
         "flag": "🇵🇱",
+        "coordinates_lat_lon": [52.25, 21.0],
     },
     "PT": {
         "official_name": "Portugal",
@@ -2134,6 +2311,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+351",
         "flag": "🇵🇹",
+        "coordinates_lat_lon": [38.71666667, -9.133333],
     },
     "PR": {
         "official_name": "Puerto Rico",
@@ -2146,6 +2324,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1939",
         "flag": "🇵🇷",
+        "coordinates_lat_lon": [18.46666667, -66.116667],
     },
     "QA": {
         "official_name": "Qatar",
@@ -2158,6 +2337,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+974",
         "flag": "🇶🇦",
+        "coordinates_lat_lon": [25.28333333, 51.533333],
     },
     "RO": {
         "official_name": "Romania",
@@ -2170,6 +2350,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+40",
         "flag": "🇷🇴",
+        "coordinates_lat_lon": [44.43333333, 26.1],
     },
     "RU": {
         "official_name": "Russian Federation (the)",
@@ -2182,6 +2363,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+7",
         "flag": "🇷🇺",
+        "coordinates_lat_lon": [55.75, 37.6],
     },
     "RW": {
         "official_name": "Rwanda",
@@ -2194,6 +2376,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+250",
         "flag": "🇷🇼",
+        "coordinates_lat_lon": [-1.95, 30.05],
     },
     "RE": {
         "official_name": "Réunion",
@@ -2206,6 +2389,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+262",
         "flag": "🇷🇪",
+        "coordinates_lat_lon": [],
     },
     "BL": {
         "official_name": "Saint Barthélemy",
@@ -2218,6 +2402,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+590",
         "flag": "🇧🇱",
+        "coordinates_lat_lon": [17.88333333, -62.85],
     },
     "SH": {
         "official_name": "Saint Helena, Ascension and Tristan da Cunha",
@@ -2230,6 +2415,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+290",
         "flag": "🇸🇭",
+        "coordinates_lat_lon": [-15.93333333, -5.716667],
     },
     "KN": {
         "official_name": "Saint Kitts and Nevis",
@@ -2242,6 +2428,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1869",
         "flag": "🇰🇳",
+        "coordinates_lat_lon": [17.3, -62.716667],
     },
     "LC": {
         "official_name": "Saint Lucia",
@@ -2254,6 +2441,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1758",
         "flag": "🇱🇨",
+        "coordinates_lat_lon": [14.0, -61.0],
     },
     "MF": {
         "official_name": "Saint Martin (French part)",
@@ -2266,6 +2454,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+590",
         "flag": "🇲🇫",
+        "coordinates_lat_lon": [18.0731, -63.0822],
     },
     "PM": {
         "official_name": "Saint Pierre and Miquelon",
@@ -2278,6 +2467,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+508",
         "flag": "🇵🇲",
+        "coordinates_lat_lon": [46.76666667, -56.183333],
     },
     "VC": {
         "official_name": "Saint Vincent and the Grenadines",
@@ -2290,6 +2480,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1784",
         "flag": "🇻🇨",
+        "coordinates_lat_lon": [13.13333333, -61.216667],
     },
     "WS": {
         "official_name": "Samoa",
@@ -2302,6 +2493,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+685",
         "flag": "🇼🇸",
+        "coordinates_lat_lon": [-13.81666667, -171.766667],
     },
     "SM": {
         "official_name": "San Marino",
@@ -2314,6 +2506,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+378",
         "flag": "🇸🇲",
+        "coordinates_lat_lon": [43.93333333, 12.416667],
     },
     "ST": {
         "official_name": "Sao Tome and Principe",
@@ -2326,6 +2519,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+239",
         "flag": "🇸🇹",
+        "coordinates_lat_lon": [0.333333333, 6.733333],
     },
     "SA": {
         "official_name": "Saudi Arabia",
@@ -2338,6 +2532,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+966",
         "flag": "🇸🇦",
+        "coordinates_lat_lon": [24.65, 46.7],
     },
     "SN": {
         "official_name": "Senegal",
@@ -2350,6 +2545,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+221",
         "flag": "🇸🇳",
+        "coordinates_lat_lon": [14.73333333, -17.633333],
     },
     "RS": {
         "official_name": "Serbia",
@@ -2362,6 +2558,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+381",
         "flag": "🇷🇸",
+        "coordinates_lat_lon": [44.83333333, 20.5],
     },
     "SC": {
         "official_name": "Seychelles",
@@ -2374,6 +2571,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+248",
         "flag": "🇸🇨",
+        "coordinates_lat_lon": [-4.616666667, 55.45],
     },
     "SL": {
         "official_name": "Sierra Leone",
@@ -2386,6 +2584,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+232",
         "flag": "🇸🇱",
+        "coordinates_lat_lon": [8.483333333, -13.233333],
     },
     "SG": {
         "official_name": "Singapore",
@@ -2398,6 +2597,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+65",
         "flag": "🇸🇬",
+        "coordinates_lat_lon": [1.283333333, 103.85],
     },
     "SX": {
         "official_name": "Sint Maarten (Dutch part)",
@@ -2410,6 +2610,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": None,
         "flag": "🇸🇽",
+        "coordinates_lat_lon": [18.01666667, -63.033333],
     },
     "SK": {
         "official_name": "Slovakia",
@@ -2422,6 +2623,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+421",
         "flag": "🇸🇰",
+        "coordinates_lat_lon": [48.15, 17.116667],
     },
     "SI": {
         "official_name": "Slovenia",
@@ -2434,6 +2636,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+386",
         "flag": "🇸🇮",
+        "coordinates_lat_lon": [46.05, 14.516667],
     },
     "SB": {
         "official_name": "Solomon Islands",
@@ -2446,6 +2649,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+677",
         "flag": "🇸🇧",
+        "coordinates_lat_lon": [-9.433333333, 159.95],
     },
     "SO": {
         "official_name": "Somalia",
@@ -2458,6 +2662,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+252",
         "flag": "🇸🇴",
+        "coordinates_lat_lon": [2.066666667, 45.333333],
     },
     "ZA": {
         "official_name": "South Africa",
@@ -2470,6 +2675,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+27",
         "flag": "🇿🇦",
+        "coordinates_lat_lon": [-25.7, 28.216667],
     },
     "GS": {
         "official_name": "South Georgia and the South Sandwich Islands",
@@ -2482,6 +2688,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+500",
         "flag": "🇬🇸",
+        "coordinates_lat_lon": [-54.283333, -36.5],
     },
     "SS": {
         "official_name": "South Sudan",
@@ -2494,6 +2701,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+211",
         "flag": "🇸🇸",
+        "coordinates_lat_lon": [4.85, 31.616667],
     },
     "ES": {
         "official_name": "Spain",
@@ -2506,6 +2714,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+34",
         "flag": "🇪🇸",
+        "coordinates_lat_lon": [40.4, -3.683333],
     },
     "LK": {
         "official_name": "Sri Lanka",
@@ -2518,6 +2727,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+94",
         "flag": "🇱🇰",
+        "coordinates_lat_lon": [6.916666667, 79.833333],
     },
     "SD": {
         "official_name": "Sudan (the)",
@@ -2530,6 +2740,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+249",
         "flag": "🇸🇩",
+        "coordinates_lat_lon": [15.6, 32.533333],
     },
     "SR": {
         "official_name": "Suriname",
@@ -2542,6 +2753,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+597",
         "flag": "🇸🇷",
+        "coordinates_lat_lon": [5.833333333, -55.166667],
     },
     "SJ": {
         "official_name": "Svalbard and Jan Mayen",
@@ -2554,6 +2766,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+47",
         "flag": "🇸🇯",
+        "coordinates_lat_lon": [78.21666667, 15.633333],
     },
     "SE": {
         "official_name": "Sweden",
@@ -2566,6 +2779,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+46",
         "flag": "🇸🇪",
+        "coordinates_lat_lon": [59.33333333, 18.05],
     },
     "CH": {
         "official_name": "Switzerland",
@@ -2578,6 +2792,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+41",
         "flag": "🇨🇭",
+        "coordinates_lat_lon": [46.91666667, 7.466667],
     },
     "SY": {
         "official_name": "Syrian Arab Republic (the)",
@@ -2590,6 +2805,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+963",
         "flag": "🇸🇾",
+        "coordinates_lat_lon": [33.5, 36.3],
     },
     "TW": {
         "official_name": "Taiwan (Province of China)",
@@ -2602,6 +2818,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+886",
         "flag": "🇹🇼",
+        "coordinates_lat_lon": [25.03333333, 121.516667],
     },
     "TJ": {
         "official_name": "Tajikistan",
@@ -2614,6 +2831,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+992",
         "flag": "🇹🇯",
+        "coordinates_lat_lon": [38.55, 68.766667],
     },
     "TZ": {
         "official_name": "Tanzania, the United Republic of",
@@ -2626,6 +2844,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+255",
         "flag": "🇹🇿",
+        "coordinates_lat_lon": [-6.8, 39.283333],
     },
     "TH": {
         "official_name": "Thailand",
@@ -2638,6 +2857,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+66",
         "flag": "🇹🇭",
+        "coordinates_lat_lon": [13.75, 100.516667],
     },
     "TL": {
         "official_name": "Timor-Leste",
@@ -2650,6 +2870,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+670",
         "flag": "🇹🇱",
+        "coordinates_lat_lon": [-8.583333333, 125.6],
     },
     "TG": {
         "official_name": "Togo",
@@ -2662,6 +2883,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+228",
         "flag": "🇹🇬",
+        "coordinates_lat_lon": [6.116666667, 1.216667],
     },
     "TK": {
         "official_name": "Tokelau",
@@ -2674,6 +2896,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+690",
         "flag": "🇹🇰",
+        "coordinates_lat_lon": [-9.166667, -171.833333],
     },
     "TO": {
         "official_name": "Tonga",
@@ -2686,6 +2909,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+676",
         "flag": "🇹🇴",
+        "coordinates_lat_lon": [-21.13333333, -175.2],
     },
     "TT": {
         "official_name": "Trinidad and Tobago",
@@ -2698,6 +2922,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+1868",
         "flag": "🇹🇹",
+        "coordinates_lat_lon": [10.65, -61.516667],
     },
     "TN": {
         "official_name": "Tunisia",
@@ -2710,6 +2935,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+216",
         "flag": "🇹🇳",
+        "coordinates_lat_lon": [36.8, 10.183333],
     },
     "TR": {
         "official_name": "Turkey",
@@ -2722,6 +2948,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+90",
         "flag": "🇹🇷",
+        "coordinates_lat_lon": [39.93333333, 32.866667],
     },
     "TM": {
         "official_name": "Turkmenistan",
@@ -2734,6 +2961,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+993",
         "flag": "🇹🇲",
+        "coordinates_lat_lon": [37.95, 58.383333],
     },
     "TC": {
         "official_name": "Turks and Caicos Islands (the)",
@@ -2746,6 +2974,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1649",
         "flag": "🇹🇨",
+        "coordinates_lat_lon": [21.46666667, -71.133333],
     },
     "TV": {
         "official_name": "Tuvalu",
@@ -2758,6 +2987,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+688",
         "flag": "🇹🇻",
+        "coordinates_lat_lon": [-8.516666667, 179.216667],
     },
     "UG": {
         "official_name": "Uganda",
@@ -2770,6 +3000,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+256",
         "flag": "🇺🇬",
+        "coordinates_lat_lon": [0.316666667, 32.55],
     },
     "UA": {
         "official_name": "Ukraine",
@@ -2782,6 +3013,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+380",
         "flag": "🇺🇦",
+        "coordinates_lat_lon": [50.43333333, 30.516667],
     },
     "AE": {
         "official_name": "United Arab Emirates (the)",
@@ -2794,6 +3026,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+971",
         "flag": "🇦🇪",
+        "coordinates_lat_lon": [24.46666667, 54.366667],
     },
     "GB": {
         "official_name": "United Kingdom of Great Britain and Northern Ireland (the)",
@@ -2806,6 +3039,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+44",
         "flag": "🇬🇧",
+        "coordinates_lat_lon": [51.5, -0.083333],
     },
     "UM": {
         "official_name": "United States Minor Outlying Islands (the)",
@@ -2818,6 +3052,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": None,
         "flag": "🇺🇲",
+        "coordinates_lat_lon": [38.883333, -77.0],
     },
     "US": {
         "official_name": "United States of America (the)",
@@ -2830,6 +3065,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1",
         "flag": "🇺🇸",
+        "coordinates_lat_lon": [38.883333, -77.0],
     },
     "UY": {
         "official_name": "Uruguay",
@@ -2842,6 +3078,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+598",
         "flag": "🇺🇾",
+        "coordinates_lat_lon": [-34.85, -56.166667],
     },
     "UZ": {
         "official_name": "Uzbekistan",
@@ -2854,6 +3091,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+998",
         "flag": "🇺🇿",
+        "coordinates_lat_lon": [41.31666667, 69.25],
     },
     "VU": {
         "official_name": "Vanuatu",
@@ -2866,6 +3104,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+678",
         "flag": "🇻🇺",
+        "coordinates_lat_lon": [-17.73333333, 168.316667],
     },
     "VE": {
         "official_name": "Venezuela (Bolivarian Republic of)",
@@ -2878,6 +3117,7 @@ COUNTRIES_DATA = {
         "continent_ge": "სამხრეთ ამერიკა",
         "dial_code": "+58",
         "flag": "🇻🇪",
+        "coordinates_lat_lon": [10.48333333, -66.866667],
     },
     "VN": {
         "official_name": "Viet Nam",
@@ -2890,6 +3130,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+84",
         "flag": "🇻🇳",
+        "coordinates_lat_lon": [21.03333333, 105.85],
     },
     "VG": {
         "official_name": "Virgin Islands (British)",
@@ -2902,6 +3143,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1284",
         "flag": "🇻🇬",
+        "coordinates_lat_lon": [18.41666667, -64.616667],
     },
     "VI": {
         "official_name": "Virgin Islands (U.S.)",
@@ -2914,6 +3156,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1340",
         "flag": "🇻🇮",
+        "coordinates_lat_lon": [18.35, -64.933333],
     },
     "WF": {
         "official_name": "Wallis and Futuna",
@@ -2926,6 +3169,7 @@ COUNTRIES_DATA = {
         "continent_ge": "ოკეანეთი",
         "dial_code": "+681",
         "flag": "🇼🇫",
+        "coordinates_lat_lon": [-13.95, -171.933333],
     },
     "EH": {
         "official_name": "Western Sahara",
@@ -2938,6 +3182,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+212",
         "flag": "🇪🇭",
+        "coordinates_lat_lon": [27.153611, -13.203333],
     },
     "YE": {
         "official_name": "Yemen",
@@ -2950,6 +3195,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აზია",
         "dial_code": "+967",
         "flag": "🇾🇪",
+        "coordinates_lat_lon": [15.35, 44.2],
     },
     "ZM": {
         "official_name": "Zambia",
@@ -2962,6 +3208,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+260",
         "flag": "🇿🇲",
+        "coordinates_lat_lon": [-15.41666667, 28.283333],
     },
     "ZW": {
         "official_name": "Zimbabwe",
@@ -2974,6 +3221,7 @@ COUNTRIES_DATA = {
         "continent_ge": "აფრიკა",
         "dial_code": "+263",
         "flag": "🇿🇼",
+        "coordinates_lat_lon": [-17.81666667, 31.033333],
     },
     "AX": {
         "official_name": "Åland Islands",
@@ -2986,8 +3234,10 @@ COUNTRIES_DATA = {
         "continent_ge": "ევროპა",
         "dial_code": "+358",
         "flag": "🇦🇽",
+        "coordinates_lat_lon": [60.116667, 19.9],
     },
 }
+
 
 POPULATED_AREAS_DATA = {
     # Tbilisi
@@ -3796,6 +4046,7 @@ def get_country_meta_info_with_iso2_code(alpha_2_code):
         "continent_ge": "აზია",
         "dial_code": "+972",
         "flag": "🇮🇱",
+        "coordinates_lat_lon": [31.76666667, 35.233333],
     }
 
     if given alpha_2_code not found, None will be returned.

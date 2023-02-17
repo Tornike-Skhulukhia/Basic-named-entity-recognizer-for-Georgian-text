@@ -17,6 +17,7 @@ def test_georgia():
         "continent_ge": "ევროპა",
         "dial_code": "+995",
         "flag": "🇬🇪",
+        "coordinates_lat_lon": [41.68333333, 44.833333],
     }.items():
         assert resp.get(key) == value
 
@@ -35,6 +36,7 @@ def test_russia():
         "continent_ge": "ევროპა",
         "dial_code": "+7",
         "flag": "🇷🇺",
+        "coordinates_lat_lon": [55.75, 37.6],
     }.items():
         assert resp.get(key) == value
 
@@ -53,5 +55,6 @@ def test_us():
         "continent_ge": "ჩრდილოეთ ამერიკა",
         "dial_code": "+1",
         "flag": "🇺🇸",
+        "coordinates_lat_lon": [38.883333, -77.0],
     }.items():
         assert resp.get(key) == value
