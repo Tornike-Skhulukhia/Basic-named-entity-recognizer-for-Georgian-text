@@ -93,3 +93,12 @@ def test_6():
     ]
 
     assert sorted(answer) == extract_populated_areas(text)
+
+
+def test_7_skip_these_matches_works():
+    text = """
+    რუსთაველის გამზირზე შოთან ჩემი სახელობისააო.
+    """
+    answer = []
+
+    assert sorted(answer) == extract_populated_areas(text)

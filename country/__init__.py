@@ -1,5 +1,7 @@
 # TODO: think about implementing trie which will make extraction of specific word-starting cases much easier
 
+from .helpers import _get_populated_area_word_in_all_different_common_forms
+
 """
 
 
@@ -1327,310 +1329,128 @@ COUNTRIES_EXTRACT_INFO = [
 POPULATED_AREAS_EXTRACT_INFO = [
     {
         "id": "თბილისი",
-        "word_should_start": [
-            "თბილის",
-            "ტფილის",
-        ],
     },
     {
         "id": "ქუთაისი",
-        "word_should_start": [
-            "ქუთაის",
-        ],
     },
     {
         "id": "ბათუმი",
-        "word_should_start": [
-            "ბათუმ",
-        ],
     },
     {
         "id": "რუსთავი",
-        "word_should_start": [
-            "რუსთავ",
+        "skip_these_matches": [
+            "რუსთაველი",
+            "რუსთაველის",
+            "რუსთაველით",
+            "რუსთაველზე",
+            "რუსთაველთან",
+            "რუსთაველამდე",
         ],
     },
     {
         "id": "გორი",
-        "word_should_start": [],
-        "possible_full_words": [
-            "გორი",
-            "გორმა",
-            "გორს",
-            "გორის",
-            "გორში",
-            "გორულ",
-            "გორელ",
-        ],
     },
     {
         "id": "ფოთი",
-        "word_should_start": [],
-        "possible_full_words": [
-            "ფოთი",
-            "ფოთმა",
-            "ფოთს",
-            "ფოთის",
-            "ფოთში",
-            "ფოთულ",
-            "ფოთელ",
-        ],
     },
     {
         "id": "ზუგდიდი",
-        "word_should_start": [
-            "ზუგდიდ",
-        ],
     },
     {
         "id": "სამტრედია",
-        "word_should_start": [
-            "სამტრედი",
-        ],
     },
     {
         "id": "ხაშური",
-        "word_should_start": [
-            "ხაშურ",
-        ],
     },
     {
         "id": "ჭიათურა",
-        "word_should_start": [
-            "ჭიათურ",
-        ],
     },
     {
         "id": "ხარაგაული",
-        "word_should_start": [
-            "ხარაგაულ",
-        ],
     },
     {
         "id": "სენაკი",
-        "word_should_start": [
-            "სენაკ",
-        ],
     },
     {
         "id": "თელავი",
-        "word_should_start": [],
-        "possible_full_words": [
-            "თელავი",
-            "თელავმა",
-            "თელავს",
-            "თელავის",
-            "თელავში",
-            "თელაველ",
-            "თელაველი",
-            "თელაველმა",
-            "თელაველს",
-            "თელაველები",
-            "თელაველებმა",
-            "თელავურ",
-            "თელავური",
-            "თელავურმა",
-        ],
     },
     {
         "id": "მარნეული",
-        "word_should_start": [
-            "მარნეულ",
-        ],
     },
     {
         "id": "ზესტაფონი",
-        "word_should_start": [
-            "ზესტაფონ",
-        ],
     },
     {
         "id": "ახალციხე",
-        "word_should_start": [
-            "ახალციხ",
-        ],
     },
     {
         "id": "ოზურგეთი",
-        "word_should_start": [
-            "ოზურგეთ",
-        ],
     },
     {
         "id": "ტყიბული",
-        "word_should_start": [
-            "ტყიბულ",
-        ],
     },
     {
         "id": "ქობულეთი",
-        "word_should_start": [
-            "ქობულეთ",
-        ],
     },
     {
         "id": "ბორჯომი",
-        "word_should_start": [
-            "ბორჯომ",
-        ],
     },
     {
         "id": "წყალტუბო",
-        "word_should_start": [
-            "წყალტუბო",
-        ],
     },
     {
         "id": "ასპინძა",
-        "word_should_start": [
-            "ასპინძ",
-        ],
     },
     {
         "id": "კასპი",
-        "word_should_start": [],
-        "possible_full_words": [
-            "კასპი",
-            "კასპმა",
-            "კასპს",
-            "კასპის",
-            "კასპში",
-            "კასპელ",
-            "კასპელი",
-            "კასპელმა",
-            "კასპელს",
-            "კასპელები",
-            "კასპელებმა",
-            "კასპურ",
-            "კასპური",
-            "კასპურმა",
-        ],
     },
     {
         "id": "გარდაბანი",
-        "word_should_start": [
-            "გარდაბან",
-        ],
     },
     {
         "id": "ახალქალაქი",
-        "word_should_start": [
-            "ახალქალაქ",
-        ],
     },
     {
         "id": "ბოლნისი",
-        "word_should_start": [
-            "ბოლნის",
-        ],
     },
     {
         "id": "საგარეჯო",
-        "word_should_start": [
-            "საგარეჯ",
-        ],
     },
     {
         "id": "ხონი",
-        "word_should_start": [],
-        "possible_full_words": [
-            "ხონი",
-            "ხონმა",
-            "ხონს",
-            "ხონის",
-            "ხონში",
-            "ხონელ",
-            "ხონელი",
-            "ხონელმა",
-            "ხონელს",
-            "ხონელები",
-            "ხონელებმა",
-            "ხონურ",
-            "ხონური",
-            "ხონურმა",
-        ],
     },
     {
         "id": "გურჯაანი",
-        "word_should_start": [
-            "გურჯაან",
-        ],
     },
     {
         "id": "ყვარელი",
-        "word_should_start": [
-            "ყვარელ",
-            "ყვარლ",
-        ],
     },
     {
         "id": "დედოფლისწყარო",
-        "word_should_start": [
-            "დედოფლისწყარ",
-            "დედოფლის წყარ",
-        ],
     },
     {
         "id": "წალენჯიხა",
-        "word_should_start": [
-            "წალენჯიხ",
-        ],
     },
     {
         "id": "ლაგოდეხი",
-        "word_should_start": [
-            "ლაგოდეხ",
-        ],
     },
     {
         "id": "ჩოხატაური",
-        "word_should_start": [
-            "ჩოხატაურ",
-        ],
     },
     {
         "id": "ლანჩხუთი",
-        "word_should_start": [
-            "ლანჩხუთ",
-        ],
     },
     {
         "id": "ჩხოროწყუ",
-        "word_should_start": [
-            "ჩხოროწყუ",
-        ],
     },
     {
         "id": "ახმეტა",
-        "word_should_start": [],
-        "possible_full_words": [
-            "ახმეტა",
-            "ახმეტამ",
-            "ახმეტას",
-            "ახმეტის",
-            "ახმეტაში",
-            "ახმეტელ",
-            "ახმეტელი",
-            "ახმეტელმა",
-            "ახმეტელს",
-            "ახმეტელები",
-            "ახმეტელებმა",
-            "ახმეტელებს",
-            "ახმეტური",
-            "ახმეტურმა",
-        ],
     },
     {
         "id": "მცხეთა",
-        "word_should_start": [
-            "მცხეთ",
-        ],
     },
     {
         "id": "დმანისი",
-        "word_should_start": [
-            "დმანის",
-        ],
     },
     {
         "id": "თეთრი წყარო",
@@ -1641,405 +1461,165 @@ POPULATED_AREAS_EXTRACT_INFO = [
     },
     {
         "id": "დუშეთი",
-        "word_should_start": [
-            "დუშეთ",
-        ],
     },
     {
         "id": "ქარელი",
-        "word_should_start": [
-            "ქარელ",
-        ],
     },
     {
         "id": "წალკა",
-        "word_should_start": [],
-        "possible_full_words": [
-            "წალკა",
-            "წალკამ",
-            "წალკას",
-            "წალკის",
-            "წალკაში",
-            "წალკელ",
-            "წალკელი",
-            "წალკელმა",
-            "წალკელს",
-            "წალკელები",
-            "წალკელებმა",
-            "წალკელებს",
-            "წალკური",
-            "წალკურმა",
-        ],
     },
     {
         "id": "საჩხერე",
-        "word_should_start": [
-            "საჩხერ",
-        ],
     },
     {
         "id": "აბაშა",
-        "word_should_start": [
-            "აბაშა",
-            "აბაშის",
-            "აბაშე",
-            "აბაშურ",
-            "აბაშურ",
-        ],
     },
     {
         "id": "ნინოწმინდა",
-        "word_should_start": [
-            "ნინოწმინდ",
-            "ნინო წმინდ",
-        ],
     },
     {
         "id": "ხობი",
-        "word_should_start": [],
-        "possible_full_words": [
-            "ხობი",
-            "ხობმა",
-            "ხობს",
-            "ხობის",
-            "ხობში",
-            "ხობელ",
-            "ხობელი",
-            "ხობელმა",
-            "ხობელს",
-            "ხობელები",
-            "ხობელებმა",
-            "ხობურ",
-            "ხობური",
-            "ხობურმა",
-        ],
     },
     {
         "id": "ვანი",
-        "word_should_start": [],
-        "possible_full_words": [
-            "ვანი",
-            "ვანმა",
-            "ვანს",
-            "ვანის",
-            "ვანში",
-            "ვანელ",
-            "ვანელი",
-            "ვანელმა",
-            "ვანელს",
-            "ვანელები",
-            "ვანელებმა",
-            "ვანურ",
-            "ვანური",
-            "ვანურმა",
-        ],
     },
     {
         "id": "თერჯოლა",
-        "word_should_start": [
-            "თერჯოლ",
-        ],
     },
     {
         "id": "ვალე",
-        "word_should_start": [],
-        "possible_full_words": [
-            "ვალე",
-            "ვალემ",
-            "ვალეს",
-            "ვალეში",
-            "ვალელ",
-            "ვალელი",
-            "ვალელმა",
-            "ვალელს",
-            "ვალელები",
-            "ვალელებმა",
-            "ვალეურ",
-            "ვალურ",
-            "ვალეური",
-            "ვალეურ",
-            "ვალეურმა",
-            "ვალურმა",
-        ],
     },
     {
         "id": "მარტვილი",
-        "word_should_start": [
-            "მარტვილ",
-        ],
     },
     {
         "id": "ბაღდათი",
-        "word_should_start": [
-            "ბაღდათ",
-        ],
     },
     {
         "id": "ონი",
-        "word_should_start": [],
-        "possible_full_words": [
-            "ონი",
-            "ონმა",
-            "ონს",
-            "ონის",
-            "ონში",
-            "ონელ",
-            "ონელი",
-            "ონელმა",
-            "ონელს",
-            "ონელები",
-            "ონელებმა",
-            "ონურ",
-            "ონური",
-            "ონურმა",
-        ],
     },
     {
         "id": "ჯვარი",
-        "word_should_start": [],
-        "possible_full_words": [
-            "ჯვარი",
-            "ჯვარმა",
-            "ჯვარს",
-            "ჯვარის",
-            "ჯვარში",
-            "ჯვარელ",
-            "ჯვარელი",
-            "ჯვარელმა",
-            "ჯვარელს",
-            "ჯვარელები",
-            "ჯვარელებმა",
-            "ჯვარულ",
-            "ჯვარული",
-            "ჯვარულმა",
-        ],
     },
     {
         "id": "სიღნაღი",
-        "word_should_start": [
-            "სიღნაღ",
-        ],
     },
     {
         "id": "ლენტეხი",
-        "word_should_start": [
-            "ლენტეხ",
-        ],
     },
     {
         "id": "მესტია",
-        "word_should_start": [
-            "მესტი",
-        ],
     },
     {
         "id": "ამბროლაური",
-        "word_should_start": [
-            "ამბროლაურ",
-        ],
     },
     {
         "id": "წნორი",
-        "word_should_start": [
-            "წნორ",
-        ],
     },
     {
         "id": "ცაგერი",
-        "word_should_start": [
-            "ცაგერ",
-        ],
     },
     {
         "id": "სოხუმი",
-        "word_should_start": [
-            "სოხუმ",
-        ],
     },
     {
         "id": "ტყვარჩელი",
-        "word_should_start": [
-            "ტყვარჩელ",
-        ],
     },
     {
         "id": "ოჩამჩირე",
-        "word_should_start": [
-            "ოჩამჩირ",
-        ],
     },
     {
         "id": "გუდაუთა",
-        "word_should_start": [
-            "გუდაუთ",
-        ],
     },
     {
         "id": "გალი",
-        "word_should_start": [],
-        "possible_full_words": [
-            "გალი",
-            "გალმა",
-            "გალს",
-            "გალის",
-            "გალში",
-            "გალელ",
-            "გალელი",
-            "გალელმა",
-            "გალელს",
-            "გალელები",
-            "გალელებმა",
-            "გალურ",
-            "გალური",
-            "გალურმა",
-        ],
     },
     {
         "id": "გულრიფში",
-        "word_should_start": [
-            "გულრიფშ",
-        ],
     },
     {
         "id": "ბიჭვინთა",
-        "word_should_start": [
-            "ბიჭვინთ",
-        ],
     },
     {
         "id": "გაგრა",
-        "word_should_start": [
-            "გაგრ",
-        ],
     },
     {
         "id": "ახალი ათონი",
         "word_should_start": [
+            "ახალათონ",
+            "ახალიათონ",
+            "ახალ ათონ",
             "ახალი ათონ",
         ],
     },
     {
         "id": "ცხინვალი",
-        "word_should_start": [
-            "ცხინვალ",
-        ],
     },
     {
         "id": "აბასთუმანი",
-        "word_should_start": [
-            "აბასთუმან",
-        ],
     },
     {
         "id": "ადიგენი",
-        "word_should_start": [
-            "ადიგენ",
-        ],
     },
     {
         "id": "ხელვაჩაური",
-        "word_should_start": [
-            "ხელვაჩაურ",
-        ],
     },
     {
         "id": "ხულო",
-        "word_should_start": [
-            "ხულო",
-        ],
     },
     {
         "id": "შუახევი",
-        "word_should_start": [
-            "შუახევ",
-        ],
     },
     {
         "id": "ყაზბეგი",
-        "word_should_start": [
-            "ყაზბეგ",
-        ],
     },
     {
         "id": "ქედა",
-        "word_should_start": [],
-        "possible_full_words": [
-            "ქედა",
-            "ქედამ",
-            "ქედას",
-            "ქედის",
-            "ქედაში",
-            "ქედელ",
-            "ქედელი",
-            "ქედელმა",
-            "ქედელს",
-            "ქედელები",
-            "ქედელებმა",
-            "ქედელებს",
-            "ქედური",
-            "ქედურმა",
-        ],
     },
     {
         "id": "მანგლისი",
-        "word_should_start": [
-            "მანგლის",
-        ],
     },
     {
         "id": "აგარა",
-        "word_should_start": [
-            "აგარა",
-            "აგარის",
-            "აგარე",
-            "აგარულ",
-        ],
     },
     {
         "id": "ფასანაური",
-        "word_should_start": [
-            "ფასანაურ",
-        ],
     },
     {
         "id": "სურამი",
-        "word_should_start": [
-            "სურამი",
-            "სურამელ",
-            "სურამულ",
-        ],
     },
     {
         "id": "გუდაური",
-        "word_should_start": [
-            "გუდაურ",
-        ],
     },
     {
         "id": "კაზრეთი",
-        "word_should_start": [
-            "კაზრეთ",
-        ],
     },
     {
         "id": "ჟინვალი",
-        "word_should_start": [
-            "ჟინვალ",
-        ],
     },
     {
         "id": "სტეფანწმინდა",
-        "word_should_start": [
-            "სტეფანწმინდა",
-        ],
     },
     {
         "id": "ბაკურიანი",
-        "word_should_start": [
-            "ბაკურიანი",
-        ],
     },
 ]
+
+
+# to avoid lots of typing, use new helper function to generate listing for us
+for info in POPULATED_AREAS_EXTRACT_INFO:
+    # this method only supports one word terms for now
+    if info["id"].count(" ") > 0:
+        continue
+
+    info["word_should_start"] = []
+    info["possible_full_words"] = []
+
+    skip_these_matches = info.get("skip_these_matches", set())
+
+    for form in _get_populated_area_word_in_all_different_common_forms(info["id"]):
+        if form not in skip_these_matches:
+            info["possible_full_words"].append(form)
 
 
 # add helper to make later steps faster
@@ -2048,10 +1628,7 @@ for arg in [
     POPULATED_AREAS_EXTRACT_INFO,
 ]:
     for i in arg:
-
-        i["_word_should_start_spaces_nums"] = [
-            j.count(" ") for j in i.get("word_should_start", [])
-        ]
+        i["_word_should_start_spaces_nums"] = [j.count(" ") for j in i.get("word_should_start", [])]
 
 # this field values must not have spaces in them
 for arg in [

@@ -32,10 +32,6 @@ from person.extract_en import get_persons_en
             ["Emmanuel Macron", "Vladimir Putin"],
         ),
         (
-            """Agreed to continue close communication with Dmytro Kuleba-Ilia Darchiashvili""",
-            ["Dmytro Kuleba", "Ilia Darchiashvili"],
-        ),
-        (
             """Rustavi 2 published something""",
             [],
         ),

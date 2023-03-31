@@ -15,7 +15,6 @@ def _is_a_match(i, unique_words, text):
     for word_should_start, spaces_num_in_word_should_start in zip(
         i["word_should_start"], i["_word_should_start_spaces_nums"]
     ):
-
         if spaces_num_in_word_should_start == 0:
             # if it is one word start
             for k in unique_words:
@@ -30,7 +29,6 @@ def _is_a_match(i, unique_words, text):
 
 
 def _normalize_text(text, extraction_case):
-
     # replace punctuation signs with spaces
     new_text = []
     for i in text:
@@ -40,7 +38,6 @@ def _normalize_text(text, extraction_case):
 
     # extraction case specific replacements
     if extraction_case == "countries":
-
         # replace words/phrases that may give incorrect matches
         for i in ["აშშ დოლარ", "\n", "კუბურ მეტრ"]:
             text = text.replace(i, " ")
@@ -66,7 +63,6 @@ def _extract(extraction_case, text):
     }[extraction_case]
 
     for i in extract_info_iterator:
-
         if _is_a_match(i, unique_words, text):
             result.add(i["id"])
 

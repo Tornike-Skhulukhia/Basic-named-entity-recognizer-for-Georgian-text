@@ -3250,6 +3250,16 @@ POPULATED_AREAS_DATA = {
         "population_in_thousands": 1201.8,
         "coordinates_lat_lon": [41.7151, 44.8271],
     },
+    # Tbilisi
+    "ტფილისი": {  # legacy name version
+        "name_ge": " ტფილისი",
+        "name_en": "Tbilisi",
+        "is_region_center": 1,
+        "region_ge": "თბილისი",
+        "region_en": "Tbilisi",
+        "population_in_thousands": 1201.8,
+        "coordinates_lat_lon": [41.7151, 44.8271],
+    },
     # "აჭარა"
     "ბათუმი": {
         "name_ge": "ბათუმი",
