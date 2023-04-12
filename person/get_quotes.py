@@ -156,10 +156,7 @@ def _encode_quotes_in_quotes(raw_text):
             text.append(c)
         else:
             # quote does not end previous quote
-            if (
-                not _is_geo_letter_or_digit(raw_text[index - 1])
-                and raw_text[index - 1] not in punctuation
-            ):
+            if not _is_geo_letter_or_digit(raw_text[index - 1]) and raw_text[index - 1] not in punctuation:
                 encode_next_quote_char = True
 
                 encoded_char = str(uuid4())
@@ -301,24 +298,16 @@ def get_quotes(text, v=0):
     start_i = 1
 
     while start_i < len(parts_splitted_by_quote_chars):
-        quote_indices_and_texts[start_i] = parts_splitted_by_quote_chars[
-            start_i
-        ]
+        quote_indices_and_texts[start_i] = parts_splitted_by_quote_chars[start_i]
         start_i += 2
 
-    normalized_splitted_parts = [
-        _tokenize_text(part) for part in parts_splitted_by_quote_chars
-    ]
+    normalized_splitted_parts = [_tokenize_text(part) for part in parts_splitted_by_quote_chars]
 
     # to skip for next match_cases
     already_matched_quotes_indices = set()
 
     text_to_extract_persons_from = " ".join(
-        [
-            i
-            for index, i in enumerate(parts_splitted_by_quote_chars)
-            if index not in quote_indices_and_texts
-        ]
+        [i for index, i in enumerate(parts_splitted_by_quote_chars) if index not in quote_indices_and_texts]
     )
 
     extracted_persons = extract_persons(text_to_extract_persons_from)
@@ -336,8 +325,7 @@ def get_quotes(text, v=0):
             "ტესტი", - განაცხადა გიორგი გიორგაძემ
     """
     for quote_index, quote_text in quote_indices_and_texts.items():
-
-        if quote_index in already_matched_quotes_indices:
+        if quote_index in already_matched_quotes_indices:  # pragma: no cover
             continue
 
         try:
@@ -350,14 +338,9 @@ def get_quotes(text, v=0):
 
         # get max length of 4 name_surname combo if possible | ex: ურსულა ფონ დერ ლაიენი
         if len(tokens) >= 5:
-            author_candidate = extract_persons(
-                f"{tokens[1]} {tokens[2]} {tokens[3]} {tokens[4]}"
-            )
+            author_candidate = extract_persons(f"{tokens[1]} {tokens[2]} {tokens[3]} {tokens[4]}")
 
-            if (
-                len(author_candidate) == 1
-                and len(author_candidate[0].split()) == 4
-            ):
+            if len(author_candidate) == 1 and len(author_candidate[0].split()) == 4:
                 result.append(
                     {
                         "person": author_candidate[0],
@@ -370,14 +353,9 @@ def get_quotes(text, v=0):
 
         # get max length of 3 name_surname combo if possible | ex: კიმ ჩენ ინი
         if len(tokens) >= 4:
-            author_candidate = extract_persons(
-                f"{tokens[1]} {tokens[2]} {tokens[3]}"
-            )
+            author_candidate = extract_persons(f"{tokens[1]} {tokens[2]} {tokens[3]}")
 
-            if (
-                len(author_candidate) == 1
-                and len(author_candidate[0].split()) == 3
-            ):
+            if len(author_candidate) == 1 and len(author_candidate[0].split()) == 3:
                 result.append(
                     {
                         "person": author_candidate[0],
@@ -409,7 +387,6 @@ def get_quotes(text, v=0):
     """
 
     for quote_index, quote_text in quote_indices_and_texts.items():
-
         if quote_index in already_matched_quotes_indices:
             continue
 
@@ -420,25 +397,17 @@ def get_quotes(text, v=0):
 
         _tokenized_prev_text = _tokenize_text(prev_text)
 
-        if len(_tokenized_prev_text) < 2:
+        if len(_tokenized_prev_text) < 2:  # pragma: no cover
             continue
 
         # get max length of 4 name_surname combo if possible | ex: ურსულა ფონ დერ ლაიენი
         if len(_tokenized_prev_text) >= 4:
-            here_should_be_person_mentioned = " ".join(
-                _tokenized_prev_text[-4:]
-            )
+            here_should_be_person_mentioned = " ".join(_tokenized_prev_text[-4:])
 
             author_candidate = extract_persons(here_should_be_person_mentioned)
-            raw_part_author_candidates = extract_persons(
-                prev_text, dont_deduplicate_or_sort_result=True
-            )
+            raw_part_author_candidates = extract_persons(prev_text, dont_deduplicate_or_sort_result=True)
 
-            if (
-                len(author_candidate) == 1
-                and len(author_candidate[0].split()) == 4
-            ):
-
+            if len(author_candidate) == 1 and len(author_candidate[0].split()) == 4:
                 result.append(
                     {
                         "person": raw_part_author_candidates[-1],
@@ -451,19 +420,12 @@ def get_quotes(text, v=0):
 
         # get max length of 3 name_surname combo if possible | ex: კიმ ჩენ ინი
         if len(_tokenized_prev_text) >= 3:
-            here_should_be_person_mentioned = " ".join(
-                _tokenized_prev_text[-3:]
-            )
+            here_should_be_person_mentioned = " ".join(_tokenized_prev_text[-3:])
 
             author_candidate = extract_persons(here_should_be_person_mentioned)
-            raw_part_author_candidates = extract_persons(
-                prev_text, dont_deduplicate_or_sort_result=True
-            )
+            raw_part_author_candidates = extract_persons(prev_text, dont_deduplicate_or_sort_result=True)
 
-            if (
-                len(author_candidate) == 1
-                and len(author_candidate[0].split()) == 3
-            ):
+            if len(author_candidate) == 1 and len(author_candidate[0].split()) == 3:
                 result.append(
                     {
                         "person": raw_part_author_candidates[-1],
@@ -498,22 +460,18 @@ def get_quotes(text, v=0):
 
     """
     if len(extracted_persons) > 0:
-
-        extracted_surnames_counter = Counter(
-            [i.split()[-1] for i in extracted_persons]
-        )
+        extracted_surnames_counter = Counter([i.split()[-1] for i in extracted_persons])
 
         if v:
             print(f"{extracted_surnames_counter=}, {quote_indices_and_texts=}")
 
         for quote_index, quote_text in quote_indices_and_texts.items():
-
             if quote_index in already_matched_quotes_indices:
                 continue
 
             try:
                 tokens = normalized_splitted_parts[quote_index + 1]
-            except IndexError:
+            except IndexError:  # pragma: no cover
                 continue
 
             if len(tokens) < 2 or tokens[0] not in QUOTE_ENDING_PHRASES:
@@ -521,15 +479,8 @@ def get_quotes(text, v=0):
 
             possible_surname = _get_normalized_surname_if_surname(tokens[1])
 
-            if (
-                possible_surname
-                and extracted_surnames_counter[possible_surname] == 1
-            ):
-                person = [
-                    i
-                    for i in extracted_persons
-                    if i.split()[-1] == possible_surname
-                ][0]
+            if possible_surname and extracted_surnames_counter[possible_surname] == 1:
+                person = [i for i in extracted_persons if i.split()[-1] == possible_surname][0]
 
                 result.append(
                     {

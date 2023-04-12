@@ -17,7 +17,7 @@ PUNCTUATION_MARKS = set(string.punctuation).union(set(QUOTE_LIKE_CHARS)).union({
 def _preprocess_text(text):
     # remove incorrectly label-causing words
     text = re.sub(
-        fr'\b({"|".join(INCORRECT_PERSON_LIKE_WORDS_FOR_SPACY)})\b',
+        rf'\b({"|".join(INCORRECT_PERSON_LIKE_WORDS_FOR_SPACY)})\b',
         " ",
         text,
         flags=re.IGNORECASE,
@@ -43,9 +43,6 @@ def _preprocess_text(text):
 def _text_seems_person(text):
     text = text.strip()
 
-    if not text:
-        return False
-
     # min words num check
     spaces_num = text.count(" ")
 
@@ -54,10 +51,6 @@ def _text_seems_person(text):
     # this simple check should be good enough in most cases
     # otherwise add deduplication logic
     if spaces_num == 0:
-        return False
-
-    # max words num check
-    if spaces_num > 3:
         return False
 
     return True

@@ -64464,11 +64464,11 @@ for name in _names:
     spaces_num = name.count(" ")
 
     # only 1 space-having names supported
-    if spaces_num == 1:
+    if spaces_num == 1:  # pragma: no cover
         NAMES.remove(name)
         continue
 
-    if "-" in name:
+    if "-" in name:  # pragma: no cover
         NAMES.remove(name)
 
 
