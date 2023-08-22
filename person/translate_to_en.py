@@ -43,7 +43,7 @@ EXCEPTIONS = {
 }
 
 
-def translate_to_en(text):
+def translate_to_en(text):  # pragma: no cover  # not important functionality, maybe add tests if needed later
     """
     Do basic letter-by letter translation of name or name & surname
     combination from Georgian to English.

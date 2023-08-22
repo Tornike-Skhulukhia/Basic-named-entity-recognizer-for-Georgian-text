@@ -287,7 +287,7 @@ def get_quotes(text, v=0):
 
     text = _preprocess_text(text)
 
-    if v:
+    if v:  # pragma: no cover  # no need to test prints
         print(f"preprocessed_text={text}")
 
     text, quotes_decoder = _encode_quotes_in_quotes(text)
@@ -323,7 +323,7 @@ def get_quotes(text, v=0):
 
     extracted_persons = extract_persons(text_to_extract_persons_from)
 
-    if v:
+    if v:  # pragma: no cover  # no need to test prints
         print(f"{text=}")
         print(f"{parts_splitted_by_quote_chars=}")
         print(f"{extracted_persons=}")
@@ -503,7 +503,7 @@ def get_quotes(text, v=0):
             [i.split()[-1] for i in extracted_persons]
         )
 
-        if v:
+        if v:  # pragma: no cover  # no need to test prints
             print(f"{extracted_surnames_counter=}, {quote_indices_and_texts=}")
 
         for quote_index, quote_text in quote_indices_and_texts.items():

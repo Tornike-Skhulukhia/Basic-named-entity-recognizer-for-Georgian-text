@@ -64458,23 +64458,9 @@ SURNAMES = {
 }
 
 # make some checks and add helpers
-_names = {i for i in NAMES}
-
-for name in _names:
-    spaces_num = name.count(" ")
-
-    # only 1 space-having names supported
-    if spaces_num == 1:
-        NAMES.remove(name)
-        continue
-
-    if "-" in name:
-        NAMES.remove(name)
-
 
 # if env variable NERGE_ADDITIONAL_PERSON_NAMES_AND_SURNAMES_FILE_PATH with .txt file path
 # is supplied, use this file content as an additional source of new name/surname data
-
 
 _filepath = os.environ.get(
     "NERGE_ADDITIONAL_PERSON_NAMES_AND_SURNAMES_FILE_PATH"

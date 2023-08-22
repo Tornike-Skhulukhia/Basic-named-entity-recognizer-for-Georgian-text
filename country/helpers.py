@@ -77,6 +77,13 @@ some examples for quick reminder
 
 
 def _get_populated_area_word_in_all_different_common_forms(word):
+    '''
+
+    TODO: Add კუმშვა support if specific flag was provided - ex:
+        . ფანჯარის must be ფანჯრის, so "ა" is unnecessary/wrong according to Georgian grammer 
+
+    '''
+
     word_1 = word[:-1]
     last_char = word[-1]
 

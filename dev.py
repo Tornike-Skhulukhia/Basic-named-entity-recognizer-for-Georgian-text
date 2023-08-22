@@ -3,7 +3,6 @@ Some temporary scripts
 """
 from pprint import pprint as pp
 from person.get_quotes import get_quotes
-from person.extract_en import get_persons_en
 from person.extract import extract_persons
 from person.get_quotes import _encode_quotes_in_quotes
 
